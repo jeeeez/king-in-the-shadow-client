@@ -1,0 +1,11 @@
+.account-menu {
+	float: right;
+
+	.pure-menu-allow-hover {
+		&:hover {
+			.pure-menu-link, .pure-menu-children {
+				background-color: #f9f9f9;
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.tips {
+	font-size: 14px;
+	line-height: 18px;
+
+	&.tips-error {
+		color: #d23939;
+	}
+
+	&.tips-warning {
+		color: #ecec8d;
+	}
+
+	&.tips-info {
+		color: #bbb;
+	}
+}
