@@ -8,12 +8,20 @@
 import './index.scss';
 import template from './index.html';
 
-import 'components/head-menu';
+import 'components/base/head-menu';
+import Resources from 'resources/index';
+import Dialog from 'services/dialog';
 
 export default {
-	data: () => {
-		const account = { email: '450994392@qq.com' };
+	template,
+	data() {
+		const account = { email: '' };
 		return { account };
 	},
-	template
+	created() {
+		Resources.account.check.get().then(response => {
+			this.account = response.result;
+			// console.log(this.account);
+		}).catch(error => Dialog.alert(error.message));
+	}
 };

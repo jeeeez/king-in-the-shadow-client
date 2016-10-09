@@ -3,3 +3,8 @@
 
 @import "./pure-rewrite";
 @import "./mixin";
+@import "./variables";
+
+html, body {
+	font-family: 'Monaco', courier, monospace;
+}

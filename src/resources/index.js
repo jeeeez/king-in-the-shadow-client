@@ -1,5 +1,8 @@
-import user from 'resources/user';
+import account from 'resources/account';
+import node, { nodes } from 'resources/node';
 
 export default {
-	user
+	account,
+	node,
+	nodes
 };

@@ -1,13 +1,14 @@
+<head-nav-menu v-bind:account="{}"></head-nav-menu>
 <section class="container login-container">
 	<section class="login-box">
 		<header class="box-head">用户登录</header>
 		<form class="pure-form">
 			<tips v-if="errorMessage" type="error" v-bind:message="errorMessage"></tips>
 			<fieldset class="pure-group">
-				<input type="text" class="pure-input-1" placeholder="邮箱" />
-        		<input type="password" class="pure-input-1" placeholder="密码" />
+				<input type="text" class="pure-input-1" placeholder="邮箱" v-model="email" />
+        		<input type="password" class="pure-input-1" placeholder="密码" v-model="password" />
 			</fieldset>
-			<button class="pure-button pure-input-1" v-on:click="login">登录</button>
+			<pk-button class="btn-login pure-input-1" :is-loading="isLogin" v-on:click="login">登录</pk-button>
 		</form>
 	</section>
 </section>

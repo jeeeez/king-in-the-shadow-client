@@ -28,7 +28,12 @@ const successHandle = response => {
 	}
 };
 const errorHandle = response => {
-	throw new window.Error(response.statusText);
+	try {
+		return Promise.reject(response.json());
+	} catch (error) {
+		throw new window.Error(response.statusText);
+	}
 };
+
 
 export default generator;

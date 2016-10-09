@@ -1,3 +1,9 @@
+/**
+ * 用户注册
+ * @authors Picker Lee (https://github.com/li2274221)
+ * @email   450994392@qq.com
+ * @date    2016-10-08 23:12:59
+ */
 import './index.scss';
 import template from './index.html';
 
@@ -13,10 +19,10 @@ import router from 'services/router';
 export default {
 	template,
 	data: () => {
-		return { errorMessage: '', email: '450994392@qq.com', password: 'xin5383139', isLogin: false };
+		return { errorMessage: '', email: '450994392@qq.com', password: 'xin5383139', isRegister: false };
 	},
 	methods: {
-		login(e) {
+		register(e) {
 			e.preventDefault();
 
 			// 数据验证
@@ -26,13 +32,13 @@ export default {
 			if (this.password.length < 6) return this.errorMessage = '密码长度不能小于六位！';
 
 			this.errorMessage = '';
-			this.isLogin = true;
-			Resources.account.login.save({ email: this.email, password: this.password }).then(response => {
-				this.isLogin = false;
+			this.isRegister = true;
+			Resources.account.register.save({ email: this.email, password: this.password }).then(response => {
+				this.isRegister = false;
 				router.go('/user/nodes');
 			}).catch(error => {
 				Dialog.alert(error.message);
-				this.isLogin = false;
+				this.isRegister = false;
 			});
 		}
 	}

@@ -1,0 +1,25 @@
+#nodes {
+	.panel-list {
+		padding: 0 20px;
+	}
+
+	.panel-item {
+		padding: 10px;
+		margin-bottom: 15px;
+		border-radius: 2px;
+		background-color: #fff;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+	}
+
+	.panel-attention {
+		> p {
+			font-size: 14px;
+			margin: 15px 0;
+
+			> strong {
+				font-size: 20px;
+				font-weight: 400;
+			}
+		}
+	}
+}

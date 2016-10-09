@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/**
+ * 菜单通用样式
+ * @authors Picker Lee (https://github.com/li2274221)
+ * @emial   450994392@qq.com
+ * @date    2016-09-27 16:24:05
+ */
+
+@import "../../assets/styles/variables";
+
+.sidebar-menu {
+	width: $menuWidth;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #252a3a;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+	.main-menu {
+		> h4 {
+			margin: 10px 15px;
+			color: #4b7197;
+		}
+	}
+
+	.pure-menu-item {
+		.pure-menu-link {
+			margin-left: 0.5em;
+			color: #fff;
+
+			&:hover, &:focus {
+				background-color: #373c5a;
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/**
+ * 容器组件通用样式
+ * @authors Picker Lee (https://github.com/li2274221)
+ * @emial   450994392@qq.com
+ * @date    2016-09-27 16:28:52
+ */
+
+@import "../../assets/styles/variables";
+
+#container {
+	#mainContent {
+		margin-left: $menuWidth;
+	}
+}
