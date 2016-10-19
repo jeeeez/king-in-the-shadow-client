@@ -9,19 +9,15 @@ import './index.scss';
 import template from './index.html';
 
 import 'components/base/head-menu';
-import Resources from 'resources/index';
-import Dialog from 'services/dialog';
+import G from 'constants';
 
 export default {
 	template,
 	data() {
-		const account = { email: '' };
+		const account = G.account || {};
 		return { account };
 	},
 	created() {
-		Resources.account.check.get().then(response => {
-			this.account = response.result;
-			// console.log(this.account);
-		}).catch(error => Dialog.alert(error.message));
+
 	}
 };

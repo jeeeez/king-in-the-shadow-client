@@ -22,4 +22,29 @@
 			}
 		}
 	}
+
+	.panel-node-item {
+		border-bottom: 1px solid #ccc;
+		padding: 10px 0;
+		margin-bottom: 10px;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		.node-item-heading {
+			.fa-qrcode {
+				cursor: pointer;
+			}
+
+			.node-name {
+				font-size: 16px;
+			}
+
+			.tips {
+				font-size: 12px;
+				color: #888;
+			}
+		}
+	}
 }

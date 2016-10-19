@@ -5,6 +5,7 @@ import 'components/base/tips';
 import 'components/base/button';
 import 'components/base/head-menu';
 
+import G from 'constants';
 import Resources from 'resources';
 import Validation from 'services/validation';
 import Dialog from 'services/dialog';
@@ -28,6 +29,7 @@ export default {
 			this.errorMessage = '';
 			this.isLogin = true;
 			Resources.account.login.save({ email: this.email, password: this.password }).then(response => {
+				G.account = response.result;
 				this.isLogin = false;
 				router.go('/user/nodes');
 			}).catch(error => {

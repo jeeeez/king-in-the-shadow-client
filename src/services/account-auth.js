@@ -5,11 +5,13 @@
  * @date    2016-09-18 22:14:18
  */
 
+import G from 'constants';
+
 /**
  * 判断当前是否为登录状态
  * @return {Boolean} true:登录状态,false:非登录状态
  */
-const accoutAuth = () => true;
+const accoutAuth = () => G.account && G.account.id && true;
 
 /**
  * 提供 mixin 对象以供直接在 component 中使用

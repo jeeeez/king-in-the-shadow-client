@@ -21,7 +21,8 @@ module.exports = {
 			'services': path.resolve(__dirname, '../src/services'),
 			'resources': path.resolve(__dirname, '../src/resources'),
 			'containers': path.resolve(__dirname, '../src/containers'),
-			'components': path.resolve(__dirname, '../src/components')
+			'components': path.resolve(__dirname, '../src/components'),
+			'constants': path.resolve(__dirname, '../src/constants')
 		}
 	},
 	resolveLoader: {

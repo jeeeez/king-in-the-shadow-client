@@ -4,14 +4,14 @@
 		<div class="panel-item panel-attention">
 			<p class="info"><strong>注意！</strong></p>
 			<p class="info">请勿在任何地方公开节点地址！</p>
-			<p class="info">如果您不知道如何查看节点的详细信息和二维码，请点我。</p>
+			<p class="info">如果您不知道如何查看节点的详细信息和二维码，<a href="javascript:void(0)">请点我</a>。</p>
 		</div>
 		<div class="panel-item panel-node-list">
 			<div class="panel-node-item" v-for="node in nodes" :node="node" :index="$index">
 				<header class="node-item-heading">
 					<span class="fa fa-qrcode" v-on:click="showQRCode(node)"></span>
-					<span>{{node.name}}</span>
-					<span>（点击二维码图标可查看节点二维码）</span>
+					<span class="node-name">{{node.name}}</span>
+					<span class="tips">（点击二维码图标可查看节点二维码）</span>
 				</header>
 				<section class="node-item-body">
 					<section class="node-item-card">

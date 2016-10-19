@@ -11,6 +11,7 @@ import 'components/base/tips';
 import 'components/base/button';
 import 'components/base/head-menu';
 
+import G from 'constants';
 import Resources from 'resources';
 import Validation from 'services/validation';
 import Dialog from 'services/dialog';
@@ -34,6 +35,7 @@ export default {
 			this.errorMessage = '';
 			this.isRegister = true;
 			Resources.account.register.save({ email: this.email, password: this.password }).then(response => {
+				G.account = response.result;
 				this.isRegister = false;
 				router.go('/user/nodes');
 			}).catch(error => {
