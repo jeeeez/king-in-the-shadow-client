@@ -18,13 +18,19 @@ export default {
 	data() {
 		return { nodes: [] };
 	},
-	created() {
-		Resources.nodes.query().then(nodes => {
-			console.log(this.nodes.length);
-			this.nodes = nodes;
-			console.log(this.nodes);
+	ready() {
+		Resources.nodes.query().then(data => {
+			this.nodes = data.result;
 		}).catch(error => {
 			Dialog.alert(error.message);
 		});
+	},
+
+	methods: {
+		showQRCode(node) {
+			Dialog.alert(`<h4>使用 Shadowrocket App 扫描下方二维码可自动完成配置</h4><img src="${node.URI}" />`, {
+				title: '节点二维码'
+			});
+		}
 	}
 };

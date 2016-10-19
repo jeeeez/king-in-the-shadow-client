@@ -18,7 +18,6 @@ const accoutAuth = () => true;
 accoutAuth.mixin = {
 	route: {
 		canActivate: transition => {
-			console.log(2);
 			return accoutAuth();
 		}
 	}
