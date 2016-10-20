@@ -26,7 +26,6 @@ Vue.component('head-nav-menu', {
 		},
 		switchMenu() {
 			this.G.showMenu = !this.G.showMenu;
-			console.log(G);
 		}
 	}
 });
