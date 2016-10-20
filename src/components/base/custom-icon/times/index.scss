@@ -1,0 +1,22 @@
+.custom-icon.icon-times {
+	&:before, &:after {
+		content: ' ';
+		display: block;
+		height: 141.42%;
+		width: 2px;
+		background-color: #565d64;
+		position: absolute;
+		left: 50%;
+		top: -3px;
+		margin-left: -1px;
+		transform-origin: 50% 50%;
+	}
+
+	&:before {
+		transform: rotate(45deg);
+	}
+
+	&:after {
+		transform: rotate(-45deg);
+	}
+}

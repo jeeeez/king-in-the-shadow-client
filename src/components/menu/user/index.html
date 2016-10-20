@@ -3,7 +3,7 @@
 		<h4>我的</h4>
 		<ul class="pure-menu-list">
 			<li class="pure-menu-item">
-				<a v-link="{path:'dashboard', activeClass:'xixi'}" class="pure-menu-link">账户信息</a>
+				<router-link to="dashboard" class="pure-menu-link">个人资料</router-link>
 			</li>
 		</ul>
 	</div>
@@ -11,7 +11,7 @@
 		<h4>使用</h4>
 		<ul class="pure-menu-list">
 			<li class="pure-menu-item">
-				<a v-link="{path:'nodes'}" class="pure-menu-link">节点列表</a>
+				<router-link to="nodes" class="pure-menu-link">节点列表</router-link>
 			</li>
 		</ul>
 	</div>

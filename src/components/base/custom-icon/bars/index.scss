@@ -1,0 +1,23 @@
+.custom-icon.icon-bars {
+	width: 23px;
+	height: 2px;
+	background-color: #565d64;
+
+	&:before, &:after {
+		content: ' ';
+		display: block;
+		height: 2px;
+		width: 100%;
+		background-color: #565d64;
+		position: absolute;
+		left: 0;
+	}
+
+	&:before {
+		top: -8px;
+	}
+
+	&:after {
+		bottom: -8px;
+	}
+}

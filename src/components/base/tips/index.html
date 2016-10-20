@@ -1,4 +1,4 @@
-<div class="tips tips-{{type}}">
+<div class="tips" v-bind:class="type">
 	<span v-if="type==='info'" class="fa fa-exclamation-triangle"></span>
 	<span v-if="type==='warning'" class="fa fa-warning"></span>
 	<span v-if="type==='error'" class="fa fa-warning"></span>

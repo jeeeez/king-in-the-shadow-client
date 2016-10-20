@@ -13,7 +13,6 @@ function entity(message, config) {
 	document.body.appendChild(_container);
 
 	const Dialog = Vue.extend({
-		el: () => _container,
 		data() {
 			return { show: true, config };
 		},
@@ -25,7 +24,7 @@ function entity(message, config) {
 		}
 	});
 
-	return new Dialog();
+	return new Dialog().$mount(_container);
 }
 
 

@@ -29,7 +29,7 @@ const successHandle = response => {
 };
 const errorHandle = response => {
 	try {
-		return Promise.reject(response.json());
+		return response.json().then(result => Promise.reject(result));
 	} catch (error) {
 		throw new window.Error(response.statusText);
 	}

@@ -22,7 +22,8 @@ module.exports = {
 			'resources': path.resolve(__dirname, '../src/resources'),
 			'containers': path.resolve(__dirname, '../src/containers'),
 			'components': path.resolve(__dirname, '../src/components'),
-			'constants': path.resolve(__dirname, '../src/constants')
+			'constants': path.resolve(__dirname, '../src/constants'),
+			'vue': 'vue/dist/vue.js'
 		}
 	},
 	resolveLoader: {

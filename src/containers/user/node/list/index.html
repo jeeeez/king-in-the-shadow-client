@@ -7,7 +7,7 @@
 			<p class="info">如果您不知道如何查看节点的详细信息和二维码，<a href="javascript:void(0)">请点我</a>。</p>
 		</div>
 		<div class="panel-item panel-node-list">
-			<div class="panel-node-item" v-for="node in nodes" :node="node" :index="$index">
+			<div class="panel-node-item" v-for="node in nodes" :node="node">
 				<header class="node-item-heading">
 					<span class="fa fa-qrcode" v-on:click="showQRCode(node)"></span>
 					<span class="node-name">{{node.name}}</span>

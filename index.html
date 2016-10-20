@@ -6,7 +6,10 @@
     <title>KING IN THE SHADOW</title>
   </head>
   <body>
-    <app></app>
+    <section id="app">
+    	<head-nav-menu v-bind:account="account"></head-nav-menu>
+    	<router-view></router-view>
+    </section>
     <!-- built files will be auto injected -->
   </body>
 </html>

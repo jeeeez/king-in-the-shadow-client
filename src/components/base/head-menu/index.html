@@ -1,29 +1,43 @@
-<nav class="pure-menu pure-menu-horizontal head-menu">
-	<a href="#" class="pure-menu-heading">KING IN THE SHADOW</a>
-	<ul class="pure-menu-list">
-		<li class="pure-menu-item"><a href="#" class="pure-menu-link">首页</a></li>
-		<li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">使用说明</a></li>
-		<li class="pure-menu-item"><a href="#" class="pure-menu-link">联系我们</a></li>
+<nav class="pure-menu pure-menu-horizontal head-menu" v-bind:class="{'show':G.showMenu}">
+	<router-link to="/" class="pure-menu-heading">KING IN THE SHADOW</router-link>
+	<ul class="pure-menu-list main-menu">
+		<router-link class="pure-menu-item" active-class="pure-menu-selected" tag="li" to="/home">
+			<a class="pure-menu-link">首页</a>
+		</router-link>
+		<router-link class="pure-menu-item" active-class="pure-menu-selected" tag="li" to="/declaration">
+			<a class="pure-menu-link">使用说明</a>
+		</router-link>
+		<router-link class="pure-menu-item" active-class="pure-menu-selected" tag="li" to="/contact">
+			<a class="pure-menu-link">联系我们</a>
+		</router-link>
 	</ul>
 
 	<!-- 如果已登录 显示当前用户的信息 -->
 	<ul v-if="account.email" class="pure-menu-list account-menu">
 		<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-			<a href="#" class="pure-menu-link">{{account.email}}</a>
+			<router-link to="/" class="pure-menu-link pure-menu-sub-item">{{account.email}}</router-link>
 			<ul class="pure-menu-children">
-				<li class="pure-menu-item"><a v-link="{path:'/user/dashboard'}" class="pure-menu-link">Dashboard</a></li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">个人资料</a></li>
-				<li class="pure-menu-item"><a  v-on:click="logout" class="pure-menu-link">退出</a></li>
+				<li class="pure-menu-item"><router-link to="/user/dashboard" class="pure-menu-link">个人资料</a></li>
+				<li class="pure-menu-item"><router-link to="" v-on:click.native="logout" class="pure-menu-link">退出</a></li>
 			</ul>
 		</li>
 	</ul>
 	<!-- 如果未登录 显示 登录/注册 按钮 -->
-	<ul v-else class="pure-menu-list account-menu right">
+	<ul v-else class="pure-menu-list account-menu">
 		<li class="pure-menu-item">
-			<a v-link="{path:'/login'}" class="pure-menu-link">登录</a>
+			<router-link to="/login" class="pure-menu-link">登录</router-link>
 		</li>
 		<li class="pure-menu-item">
-			<a v-link="{path:'/register'}" class="pure-menu-link">注册</a>
+			<router-link to="/register" class="pure-menu-link">注册</router-link>
+		</li>
+	</ul>
+
+	<ul class="pure-menu-list oops-menu">
+		<li class="pure-menu-item times" v-on:click="switchMenu">
+			<icon-times class="pure-menu-icon"></icon-times>
+		</li>
+		<li class="pure-menu-item bars" v-on:click="switchMenu">
+			<icon-bars class="pure-menu-icon"></icon-bars>
 		</li>
 	</ul>
 </nav>

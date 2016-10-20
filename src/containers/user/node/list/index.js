@@ -18,7 +18,7 @@ export default {
 	data() {
 		return { nodes: [] };
 	},
-	ready() {
+	mounted() {
 		Resources.nodes.query().then(data => {
 			this.nodes = data.result;
 		}).catch(error => {
