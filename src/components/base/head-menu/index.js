@@ -15,7 +15,6 @@ import 'components/base/custom-icon';
 
 
 Vue.component('head-nav-menu', {
-	props: ['account'],
 	template,
 	data() {
 		return { G };
@@ -25,7 +24,7 @@ Vue.component('head-nav-menu', {
 			Dialog.alert('不是你想退，想退就能退的！');
 		},
 		switchMenu() {
-			this.G.showMenu = !this.G.showMenu;
+			G.showMenu = !G.showMenu;
 		}
-	}
+	},
 });

@@ -13,9 +13,9 @@
 	</ul>
 
 	<!-- 如果已登录 显示当前用户的信息 -->
-	<ul v-if="account.email" class="pure-menu-list account-menu">
+	<ul v-if="G.account.email" class="pure-menu-list account-menu">
 		<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-			<router-link to="/" class="pure-menu-link pure-menu-sub-item">{{account.email}}</router-link>
+			<router-link to="/" class="pure-menu-link pure-menu-sub-item">{{G.account.email}}</router-link>
 			<ul class="pure-menu-children">
 				<li class="pure-menu-item"><router-link to="/user/dashboard" class="pure-menu-link">个人资料</a></li>
 				<li class="pure-menu-item"><router-link to="" v-on:click.native="logout" class="pure-menu-link">退出</a></li>
@@ -33,11 +33,17 @@
 	</ul>
 
 	<ul class="pure-menu-list oops-menu">
-		<li class="pure-menu-item times" v-on:click="switchMenu">
-			<icon-times class="pure-menu-icon"></icon-times>
-		</li>
-		<li class="pure-menu-item bars" v-on:click="switchMenu">
-			<icon-bars class="pure-menu-icon"></icon-bars>
-		</li>
+		<transition name="fade">
+			<!-- 关闭菜单 -->
+			<li class="pure-menu-item times" v-if="G.showMenu" v-on:click="switchMenu">
+				<icon-times class="pure-menu-icon"></icon-times>
+			</li>
+		</transition>
+		<transition name="fade">
+			<!-- 打开菜单 -->
+			<li class="pure-menu-item bars" v-if="!G.showMenu" v-on:click="switchMenu">
+				<icon-bars class="pure-menu-icon"></icon-bars>
+			</li>
+		</transition>
 	</ul>
 </nav>

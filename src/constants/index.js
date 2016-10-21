@@ -6,6 +6,6 @@ export default {
 	 * 3、程序初始化时会做一次用户会话检查，在 src/index.js 中
 	 * 但是设置 account 信息的脚本在 src/services/store/account.js 中
 	 */
-	account: null,
+	account: {},
 	showMenu: false
 };

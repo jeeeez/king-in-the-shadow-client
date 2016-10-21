@@ -12,14 +12,11 @@ import router from 'services/router';
 
 import AccountService from 'services/stores/account';
 import Dialog from 'services/dialog';
-import G from 'constants';
+// import G from 'constants';
+
+new Vue({
+	router
+}).$mount('#app');
 
 // 获取当前用户信息
-AccountService.get().then(account => {
-	new Vue({
-		router,
-		data() {
-			return { account: G.account || {} };
-		}
-	}).$mount('#app');
-}).catch(error => Dialog.alert(error.message));
+AccountService.get().catch(error => Dialog.alert(error.message));
