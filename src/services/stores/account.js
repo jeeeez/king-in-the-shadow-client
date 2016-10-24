@@ -8,13 +8,30 @@
 import G from 'constants';
 import Resources from 'resources/index';
 
+// ajax 请求集合
+const Requests = {
+	accountCheck: undefined
+};
+
+
 export default {
+	/**
+	 * 项目中存在同时发出2次该请求的场景
+	 * 所以在外层声明一个集合用于保存请求体
+	 * 确保在第一次请求结束之前始终返回当前请求体
+	 */
 	get: (refresh = false) => {
 		if (G.account.id && !refresh) return Promise.resolve(G.account);
 
-		return Resources.account.check.get().then(response => {
+		if (Requests.accountCheck) {
+			return Requests.accountCheck;
+		}
+
+		return Requests.accountCheck = Resources.account.check.get().then(response => {
 			G.account = response.result;
 			return G.account;
+		}).finally(() => {
+			Requests.accountCheck = undefined;
 		});
 	}
 };
