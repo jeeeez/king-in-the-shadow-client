@@ -22,9 +22,6 @@ Vue.component('head-nav-menu', {
 	methods: {
 		logout() {
 			Dialog.alert('不是你想退，想退就能退的！');
-		},
-		switchMenu() {
-			G.showMenu = !G.showMenu;
 		}
 	},
 });

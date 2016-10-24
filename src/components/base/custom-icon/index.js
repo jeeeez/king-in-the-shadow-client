@@ -8,5 +8,6 @@
 import './index.scss';
 
 
-import './bars/index';
-import './times/index';
+import './bars';
+import './times';
+import './loader';

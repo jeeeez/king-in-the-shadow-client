@@ -15,8 +15,9 @@ import Dialog from 'services/dialog';
 // import G from 'constants';
 
 new Vue({
-	router
-}).$mount('#app');
+	router,
+	template: '<router-view></router-view>'
+}).$mount('app');
 
 // 获取当前用户信息
 AccountService.get().catch(error => Dialog.alert(error.message));

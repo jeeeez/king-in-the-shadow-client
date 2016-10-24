@@ -7,5 +7,7 @@ export default {
 	 * 但是设置 account 信息的脚本在 src/services/store/account.js 中
 	 */
 	account: {},
-	showMenu: false
+	showMainMenu: false,
+	showUserMenu: false,
+	defaultAvatar: require('assets/logo.png')
 };

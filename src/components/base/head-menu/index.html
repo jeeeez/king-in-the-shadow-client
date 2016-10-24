@@ -1,4 +1,4 @@
-<nav class="pure-menu pure-menu-horizontal head-menu" v-bind:class="{'show':G.showMenu}">
+<nav class="pure-menu pure-menu-horizontal head-menu" v-bind:class="{'show':G.showMainMenu}">
 	<router-link to="/" class="pure-menu-heading">KING IN THE SHADOW</router-link>
 	<ul class="pure-menu-list main-menu">
 		<router-link class="pure-menu-item" active-class="pure-menu-selected" tag="li" to="/home">
@@ -34,15 +34,15 @@
 
 	<ul class="pure-menu-list oops-menu">
 		<transition name="fade">
-			<!-- 关闭菜单 -->
-			<li class="pure-menu-item times" v-if="G.showMenu" v-on:click="switchMenu">
-				<icon-times class="pure-menu-icon"></icon-times>
+			<!-- 打开菜单 -->
+			<li class="pure-menu-item bars" v-if="!G.showMainMenu" v-on:click="G.showMainMenu=true">
+				<icon-bars class="pure-menu-icon"></icon-bars>
 			</li>
 		</transition>
 		<transition name="fade">
-			<!-- 打开菜单 -->
-			<li class="pure-menu-item bars" v-if="!G.showMenu" v-on:click="switchMenu">
-				<icon-bars class="pure-menu-icon"></icon-bars>
+			<!-- 关闭菜单 -->
+			<li class="pure-menu-item times" v-if="G.showMainMenu" v-on:click="G.showMainMenu=false">
+				<icon-times class="pure-menu-icon"></icon-times>
 			</li>
 		</transition>
 	</ul>

@@ -12,13 +12,32 @@
 .sidebar-menu {
 	width: $menuWidth;
 	position: fixed;
-	left: 0;
 	top: 0;
+	left: 0;
 	bottom: 0;
 	background-color: #252a3a;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
+	// 用户头像、邮箱
+	.user-box {
+		text-align: center;
+		margin: 40px auto;
+
+		.avatar {
+			width: 80px;
+			height: 80px;
+		}
+
+		.email {
+			color: #f2f2f2;
+			font-size: 12px;
+		}
+	}
+
 	.main-menu {
+		overflow: hidden;
+		transition: all .5s;
+
 		> h4 {
 			margin: 10px 15px;
 			color: #4b7197;
@@ -26,13 +45,103 @@
 	}
 
 	.pure-menu-item {
+		margin: 2px auto;
+
 		.pure-menu-link {
-			margin-left: 0.5em;
+			padding-left: 0.5em;
 			color: #fff;
 
-			&:hover, &:focus {
+			&:hover, &:focus, &.router-link-active {
 				background-color: #373c5a;
 			}
 		}
 	}
+
+	.oops-menu {
+		display: none;
+		position: absolute;
+		right: 10px;
+		top: 5px;
+
+		.pure-menu-item {
+			cursor: pointer;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		.custom-icon.icon-bars {
+			background-color: #fff;
+
+			&:before, &:after {
+				background-color: #fff;
+			}
+		}
+
+		.custom-icon.icon-times {
+			&:before, &:after {
+				background-color: #fff;
+			}
+		}
+	}
 }
+
+@media screen and (max-width: 768px) {
+	.sidebar-menu {
+		width: 100%;
+		right: 0;
+		bottom: initial;
+		height: 40px;
+		z-index: 10;
+
+		.user-box {
+			margin: 5px 10px;
+			text-align: left;
+
+			.avatar {
+				width: 30px;
+				height: 30px;
+				vertical-align: middle;
+			}
+		}
+
+		.main-menu {
+			height: 0;
+			text-align: center;
+			background-color: #404861;
+		}
+
+		.oops-menu {
+			display: block;
+		}
+
+		&.show {
+			.main-menu {
+				height: 78px;
+
+				.pure-menu-item {
+					border-bottom: 1px solid #566080;
+
+					.pure-menu-link {
+						color: #bbb;
+
+						&.router-link-active {
+							background-color: transparent;
+							color: #fff;
+						}
+					}
+				}
+			}
+
+			.mask {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 568px) {}

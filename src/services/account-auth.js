@@ -6,6 +6,7 @@
  */
 
 import G from 'constants';
+import AccountService from 'services/stores/account';
 
 /**
  * 判断当前是否为登录状态
@@ -13,16 +14,13 @@ import G from 'constants';
  */
 const accoutAuth = () => G.account && G.account.id && true;
 
-/**
- * 提供 mixin 对象以供直接在 component 中使用
- * 如果 component 中含有的 canActivate 钩子函数，则会覆盖该 mixin 函数，而不是 merge
- */
-accoutAuth.mixin = {
-	route: {
-		canActivate: transition => {
-			return accoutAuth();
-		}
+
+export default {
+	beforeRouteEnter(to, from, next) {
+		if (accoutAuth()) return next();
+
+		AccountService.get().then(account => {
+			next();
+		});
 	}
 };
-
-export default accoutAuth;

@@ -1,20 +1,17 @@
 /**
- * 用户菜单
+ * loader 组件
  * @authors Picker Lee (https://github.com/li2274221)
  * @email   450994392@qq.com
- * @date    2016-09-27 16:04:04
+ * @date    2016-10-24 11:34:15
  */
 
-import '../index.scss';
+
 import './index.scss';
 import template from './index.html';
 
-import G from 'constants';
 import Vue from 'vue';
 
-Vue.component('user-menu', {
-	template,
-	data() {
-		return { G };
-	}
+
+Vue.component('loader', {
+	template
 });

@@ -16,13 +16,15 @@ import Dialog from 'services/dialog';
 export default {
 	template,
 	data() {
-		return { nodes: [] };
+		return { nodes: [], isFetching: true };
 	},
 	mounted() {
 		Resources.nodes.query().then(data => {
 			this.nodes = data.result;
 		}).catch(error => {
 			Dialog.alert(error.message);
+		}).finally(() => {
+			this.isFetching = false;
 		});
 	},
 

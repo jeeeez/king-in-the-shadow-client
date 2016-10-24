@@ -1,5 +1,13 @@
-<aside class="sidebar-menu user-menu">
-	<div class="main-menu">
+<aside class="sidebar-menu user-menu" v-bind:class="{show:G.showUserMenu}">
+	<!-- 蒙版层-当小屏且菜单显示时出现 -->
+	<div class="mask" v-if="G.showUserMenu" v-on:click="G.showUserMenu=false"></div>
+
+	<!-- 用户头像 -->
+	<div class="user-box">
+		<img class="avatar" v-bind:src="G.account.avatar||G.defaultAvatar" />
+		<span class="email">{{G.account.email}}</span>
+	</div>
+	<!-- <div class="main-menu">
 		<h4>我的</h4>
 		<ul class="pure-menu-list">
 			<li class="pure-menu-item">
@@ -14,5 +22,31 @@
 				<router-link to="nodes" class="pure-menu-link">节点列表</router-link>
 			</li>
 		</ul>
+	</div> -->
+	<div class="main-menu">
+		<ul class="pure-menu-list">
+			<li class="pure-menu-item">
+				<router-link to="dashboard" class="pure-menu-link">个人资料</router-link>
+			</li>
+			<li class="pure-menu-item">
+				<router-link to="nodes" class="pure-menu-link">节点列表</router-link>
+			</li>
+		</ul>
 	</div>
+
+	<!-- controllers -->
+	<ul class="pure-menu-list oops-menu">
+		<transition name="fade">
+			<!-- 打开菜单 -->
+			<li class="pure-menu-item bars" v-if="!G.showUserMenu" v-on:click="G.showUserMenu=true">
+				<icon-bars class="pure-menu-icon"></icon-bars>
+			</li>
+		</transition>
+		<transition name="fade">
+			<!-- 关闭菜单 -->
+			<li class="pure-menu-item times" v-if="G.showUserMenu" v-on:click="G.showUserMenu=false">
+				<icon-times class="pure-menu-icon"></icon-times>
+			</li>
+		</transition>
+	</ul>
 </aside>
