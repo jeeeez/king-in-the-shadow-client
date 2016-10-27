@@ -20,7 +20,7 @@
 	<!-- 如果已登录 显示当前用户的信息 -->
 	<ul v-if="G.account.email" class="pure-menu-list account-menu">
 		<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-			<router-link to="/" class="pure-menu-link pure-menu-sub-item">{{G.account.email}}</router-link>
+			<router-link to="" class="pure-menu-link pure-menu-sub-item">{{G.account.email}}</router-link>
 			<ul class="pure-menu-children">
 				<li class="pure-menu-item"><router-link to="/user/profile" class="pure-menu-link">个人资料</a></li>
 				<li class="pure-menu-item"><router-link to="" v-on:click.native="logout" class="pure-menu-link">退出</a></li>

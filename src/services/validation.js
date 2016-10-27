@@ -17,7 +17,8 @@ const validation = {
 	authCode: code => /^\d{4}$/.test(code),
 	phoneNumber: phoneNumber => /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/.test(phoneNumber),
 	email: email => /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email),
-	URL: str => patternURL.test(str)
+	URL: str => patternURL.test(str),
+	invitationCode: str => /[0-9a-zA-Z]{8}/.test(str)
 };
 
 export default validation;

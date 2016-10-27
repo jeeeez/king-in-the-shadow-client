@@ -1,0 +1,17 @@
+#invitationCodes {
+	.pure-table {
+		th, td {
+			&.center {
+				text-align: center;
+			}
+		}
+	}
+
+	.text-success {
+		color: green;
+	}
+
+	.text-error {
+		color: gray;
+	}
+}

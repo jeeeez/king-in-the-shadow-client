@@ -1,0 +1,35 @@
+<section id="invitationCodes">
+	<content-header>今日邀请码</content-header>
+	<section class="panel-list">
+		<div class="panel-item panel-attention">
+			<p class="info">每个账号每天可申请10个邀请码</p>
+			<p class="info">仅显示今日申请的邀请码，但之前申请的仍然有效，如需要请自行保存！</p>
+		</div>
+		<div class="panel-item panel-node-list">
+			<!-- loading -->
+			<loader v-if="isFetching"></loader>
+
+			<table class="pure-table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>邀请码</th>
+						<th class="center">创建时间</th>
+						<th class="center">使用状态</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-bind:class="{ 'pure-table-odd' : index % 2 === 0 }" v-for="(code,index) in codes" :node="code">
+						<td>{{index+1}}</td>
+						<td>{{code.code}}</td>
+						<td class="center">{{code.createDate | formatDate('hh:mm')}}</td>
+						<td class="center">
+							<span class="text-success" v-if="code.state">未使用</span>
+							<span class="text-error" v-if="!code.state">已使用</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</section>

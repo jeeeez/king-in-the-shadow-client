@@ -28,6 +28,7 @@ const routes = [
 		children: [
 			{ name: 'user.profile', path: 'profile', component: Vue.extend(User.Profile), beforeEnter: accoutAuth.beforeRouteEnter }, // , beforeEnter: accoutAuth.mixin.beforeRouteEnter
 			{ name: 'user.nodes', path: 'nodes', component: Vue.extend(User.Nodes), beforeEnter: accoutAuth.beforeRouteEnter },
+			{ name: 'user.invitationCodes', path: 'invitation/codes', component: User.InvitationCodes, beforeEnter: accoutAuth.beforeRouteEnter }
 		]
 	},
 	{ path: '*', redirect: '/' }

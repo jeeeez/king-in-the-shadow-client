@@ -20,21 +20,39 @@ import router from 'services/router';
 export default {
 	template,
 	data: () => {
-		return { errorMessage: '', email: '450994392@qq.com', password: 'xin5383139', isRegister: false };
+		return {
+			errorMessage: '',
+			email: '',
+			password: '',
+			invitationCode: '',
+			isRegister: false
+		};
 	},
 	methods: {
 		register(e) {
 			e.preventDefault();
 
 			// 数据验证
-			if (Validation.empty(this.email)) return this.errorMessage = '邮箱不能为空！';
-			if (!Validation.email(this.email)) return this.errorMessage = '邮箱格式不正确！';
-			if (Validation.empty(this.password)) return this.errorMessage = '密码不能为空！';
-			if (this.password.length < 6) return this.errorMessage = '密码长度不能小于六位！';
+			if (Validation.empty(this.email))
+				return this.errorMessage = '邮箱不能为空！';
+			if (!Validation.email(this.email))
+				return this.errorMessage = '邮箱格式不正确！';
+			if (Validation.empty(this.password))
+				return this.errorMessage = '密码不能为空！';
+			if (this.password.length < 6)
+				return this.errorMessage = '密码长度不能小于六位！';
+			if (Validation.empty(this.invitationCode))
+				return this.errorMessage = '邀请码不能为空';
+			if (!Validation.invitationCode(this.invitationCode))
+				return this.errorMessage = '邀请码为8位数字+字母组合';
 
 			this.errorMessage = '';
 			this.isRegister = true;
-			Resources.account.register.save({ email: this.email, password: this.password }).then(response => {
+			Resources.account.register.save({
+				email: this.email,
+				password: this.password,
+				invitationCode: this.invitationCode
+			}).then(response => {
 				G.account = response.result;
 				this.isRegister = false;
 				router.push('user.profile');

@@ -7,5 +7,6 @@
 
 import Profile from 'containers/user/profile';
 import Nodes from 'containers/user/node/list';
+import InvitationCodes from 'containers/user/invitation/code';
 
-export default { Profile, Nodes };
+export default { Profile, Nodes, InvitationCodes };
