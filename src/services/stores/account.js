@@ -6,6 +6,7 @@
  */
 
 import G from 'constants';
+import router from 'services/router';
 import Resources from 'resources/index';
 
 // ajax 请求集合
@@ -28,10 +29,19 @@ export default {
 		}
 
 		return Requests.accountCheck = Resources.account.check.get().then(response => {
-			G.account = response.result;
-			return G.account;
+			if (response.result && response.result.id) {
+				G.account = response.result;
+			}
+			return response.result;
 		}).finally(() => {
 			Requests.accountCheck = undefined;
+		});
+	},
+
+	logout: () => {
+		return Resources.account.logout.save().then(() => {
+			G.account = {};
+			router.push({ name: 'home' });
 		});
 	}
 };

@@ -26,8 +26,8 @@ const routes = [
 		path: '/user',
 		component: Vue.extend(UserContainer),
 		children: [
-			{ name: 'user.dashboard', path: 'dashboard', component: Vue.extend(User.Dashboard), beforeEnter: accoutAuth.beforeRouteEnter }, // , beforeEnter: accoutAuth.mixin.beforeRouteEnter
-			{ name: 'user.nodes', path: 'nodes', component: Vue.extend(User.Nodes) },
+			{ name: 'user.profile', path: 'profile', component: Vue.extend(User.Profile), beforeEnter: accoutAuth.beforeRouteEnter }, // , beforeEnter: accoutAuth.mixin.beforeRouteEnter
+			{ name: 'user.nodes', path: 'nodes', component: Vue.extend(User.Nodes), beforeEnter: accoutAuth.beforeRouteEnter },
 		]
 	},
 	{ path: '*', redirect: '/' }

@@ -7,5 +7,7 @@
 @import "./variables";
 
 html, body {
-	font-family: 'Monaco', courier, monospace;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+	color: #333;
 }

@@ -11,10 +11,19 @@ import template from './index.html';
 
 import G from 'constants';
 import Vue from 'vue';
+import AccountService from 'services/stores/account';
+import Dialog from 'services/dialog';
 
 Vue.component('user-menu', {
 	template,
 	data() {
 		return { G };
+	},
+	methods: {
+		logout() {
+			Dialog.confirm('确定退出当前账号？', () => {
+				AccountService.logout().catch(error => Dialog.alert(error.message));
+			});
+		}
 	}
 });

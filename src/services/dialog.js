@@ -42,10 +42,12 @@ export default {
 		let config = { autoClose: true, title: '提示', ...config, type: 'confirm', onConfirm: () => {}, onCancel: () => {} };
 		if (typeof settings === 'function') {
 			config.onConfirm = settings;
-			config.onCancel = onCancel;
-		} else {
-			config = {...config, ...settings };
 		}
+		if (typeof onCancel === 'function') {
+			config.onCancel = onCancel;
+		}
+		config = {...config, ...settings };
+
 		return entity(message, config);
 	}
 };

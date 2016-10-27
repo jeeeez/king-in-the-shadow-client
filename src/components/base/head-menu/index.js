@@ -8,10 +8,11 @@ import './index.scss';
 import template from './index.html';
 
 import Vue from 'vue';
-import Dialog from 'services/dialog';
 
 import G from 'constants';
 import 'components/base/custom-icon';
+import Dialog from 'services/dialog';
+import AccountService from 'services/stores/account';
 
 
 Vue.component('head-nav-menu', {
@@ -21,7 +22,9 @@ Vue.component('head-nav-menu', {
 	},
 	methods: {
 		logout() {
-			Dialog.alert('不是你想退，想退就能退的！');
+			Dialog.confirm('确定退出当前账号？', () => {
+				AccountService.logout().catch(error => Dialog.alert(error.message));
+			});
 		}
 	},
 });

@@ -4,7 +4,7 @@
 		<div class="panel-item panel-attention">
 			<p class="info"><strong>注意！</strong></p>
 			<p class="info">请勿在任何地方公开节点地址！</p>
-			<p class="info">如果您不知道如何查看节点的详细信息和二维码，<a href="javascript:void(0)">请点我</a>。</p>
+			<p class="info">如果您不知道如何查看节点的详细信息和二维码，<a href="javascript:void(0)" @click="showConfigInfo()">请点我</a>。</p>
 		</div>
 		<div class="panel-item panel-node-list">
 			<!-- loading -->
@@ -18,11 +18,11 @@
 				</header>
 				<section class="node-item-body">
 					<section class="node-item-card">
-						<h4>{{node.name}}</h4>
+						<!-- <h4>{{node.name}}</h4> -->
 						<div class="node-card-content">
 							<div class="pure-g">
-								<div class="pure-u-1-2">地址：{{node.host}}</div>
-								<div class="pure-u-1-2">加密方式：{{node.protocol}}</div>
+								<div class="pure-u-1 pure-u-md-1-2">地址：{{node.host}}</div>
+								<div class="pure-u-1 pure-u-md-1-2">加密方式：{{node.protocol}}</div>
 							</div>
 							<p>
 								请勿在任何地方公开节点地址！

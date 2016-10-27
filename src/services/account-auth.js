@@ -6,6 +6,8 @@
  */
 
 import G from 'constants';
+import Dialog from 'services/dialog';
+import router from 'services/router';
 import AccountService from 'services/stores/account';
 
 /**
@@ -20,7 +22,11 @@ export default {
 		if (accoutAuth()) return next();
 
 		AccountService.get().then(account => {
-			next();
-		});
+			if (account && account.id) {
+				next();
+			} else {
+				router.replace('login');
+			}
+		}).catch(error => Dialog.alert(error.message));
 	}
 };

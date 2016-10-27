@@ -31,7 +31,7 @@ export default {
 			Resources.account.login.save({ email: this.email, password: this.password }).then(response => {
 				G.account = response.result;
 				this.isLogin = false;
-				router.push('user.nodes');
+				router.push({ name: 'user.profile' });
 			}).catch(error => {
 				Dialog.alert(error.message);
 				this.isLogin = false;

@@ -37,7 +37,7 @@ export default {
 			Resources.account.register.save({ email: this.email, password: this.password }).then(response => {
 				G.account = response.result;
 				this.isRegister = false;
-				router.push('user.nodes');
+				router.push('user.profile');
 			}).catch(error => {
 				Dialog.alert(error.message);
 				this.isRegister = false;

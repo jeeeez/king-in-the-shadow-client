@@ -8,6 +8,14 @@ Vue.http.interceptors.push((request, next) => {
 	next();
 });
 
+/**
+ * get
+ * save
+ * query
+ * update
+ * remove
+ * delete
+ */
 const generator = (...props) => {
 	const resource = Vue.resource(...props);
 	Object.keys(resource).map(method => {

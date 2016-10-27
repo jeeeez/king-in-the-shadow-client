@@ -3,10 +3,10 @@
 	<div class="mask" v-if="G.showUserMenu" v-on:click="G.showUserMenu=false"></div>
 
 	<!-- 用户头像 -->
-	<div class="user-box">
+	<router-link class="user-box" to="home">
 		<img class="avatar" v-bind:src="G.account.avatar||G.defaultAvatar" />
 		<span class="email">{{G.account.email}}</span>
-	</div>
+	</router-link>
 	<!-- <div class="main-menu">
 		<h4>我的</h4>
 		<ul class="pure-menu-list">
@@ -26,10 +26,13 @@
 	<div class="main-menu">
 		<ul class="pure-menu-list">
 			<li class="pure-menu-item">
-				<router-link to="dashboard" class="pure-menu-link">个人资料</router-link>
+				<router-link to="profile" class="pure-menu-link">个人资料</router-link>
 			</li>
 			<li class="pure-menu-item">
 				<router-link to="nodes" class="pure-menu-link">节点列表</router-link>
+			</li>
+			<li class="pure-menu-item menu-item-logout" v-on:click="logout">
+				<span class="pure-menu-link"><i class="fa fa-power-off"></i>退出</span>
 			</li>
 		</ul>
 	</div>

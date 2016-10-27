@@ -5,7 +5,7 @@
  * @date    2016-09-27 21:17:54
  */
 
-import Dashboard from 'containers/user/dashboard';
+import Profile from 'containers/user/profile';
 import Nodes from 'containers/user/node/list';
 
-export default { Dashboard, Nodes };
+export default { Profile, Nodes };

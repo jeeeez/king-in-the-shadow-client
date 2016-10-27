@@ -24,7 +24,7 @@
 	}
 
 	.panel-node-item {
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid #eee;
 		padding: 10px 0;
 		margin-bottom: 10px;
 
@@ -33,6 +33,8 @@
 		}
 
 		.node-item-heading {
+			margin-bottom: 20px;
+
 			.fa-qrcode {
 				cursor: pointer;
 			}

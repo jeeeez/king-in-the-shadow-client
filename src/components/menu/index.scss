@@ -22,6 +22,8 @@
 	.user-box {
 		text-align: center;
 		margin: 40px auto;
+		display: inline-block;
+		text-decoration: none;
 
 		.avatar {
 			width: 80px;
@@ -50,9 +52,20 @@
 		.pure-menu-link {
 			padding-left: 0.5em;
 			color: #fff;
+			cursor: pointer;
 
 			&:hover, &:focus, &.router-link-active {
 				background-color: #373c5a;
+			}
+		}
+
+		&.menu-item-logout {
+			display: none;
+
+			.fa {
+				color: #ca0202;
+				margin-right: 5px;
+				font-size: 18px;
 			}
 		}
 	}
@@ -105,6 +118,12 @@
 			}
 		}
 
+		.pure-menu-item {
+			&.menu-item-logout {
+				display: block;
+			}
+		}
+
 		.main-menu {
 			height: 0;
 			text-align: center;
@@ -117,7 +136,7 @@
 
 		&.show {
 			.main-menu {
-				height: 78px;
+				height: 129px;
 
 				.pure-menu-item {
 					border-bottom: 1px solid #566080;
