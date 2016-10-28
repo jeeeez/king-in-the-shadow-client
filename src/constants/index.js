@@ -1,6 +1,6 @@
 export default {
 	website: {
-		title: '飞匠',
+		title: '非匠',
 		logo: require('assets/logo.png')
 	},
 	/**
