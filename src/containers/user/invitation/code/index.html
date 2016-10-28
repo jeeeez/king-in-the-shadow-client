@@ -2,34 +2,61 @@
 	<content-header>今日邀请码</content-header>
 	<section class="panel-list">
 		<div class="panel-item panel-attention">
-			<p class="info">每个账号每天可申请10个邀请码</p>
+			<p class="info">每个账号每天可申请{{maxInvitationCodeAmount}}个邀请码，今日剩余{{maxInvitationCodeAmount - codes.length}}个邀请码名额。</p>
 			<p class="info">仅显示今日申请的邀请码，但之前申请的仍然有效，如需要请自行保存！</p>
+			<div class="oops">
+				<!-- 创建按钮 -->
+				<pk-button class="btn-create pure-input-1"
+					:is-loading="isCreating"
+					:disabled="isCreating"
+					v-on:click.native="create"
+					v-if="!isFetching && codes.length < maxInvitationCodeAmount">
+					创建邀请码
+				</pk-button>
+				<!-- 今日邀请码已满 -->
+				<button class="pure-button pure-input-1" disabled
+					v-if="!isFetching && codes.length >= maxInvitationCodeAmount">
+					今日邀请码数量已使用完
+				</button>
+			</div>
 		</div>
-		<div class="panel-item panel-node-list">
+		<div class="panel-item panel-code-list">
 			<!-- loading -->
 			<loader v-if="isFetching"></loader>
 
-			<table class="pure-table">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>邀请码</th>
-						<th class="center">创建时间</th>
-						<th class="center">使用状态</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr v-bind:class="{ 'pure-table-odd' : index % 2 === 0 }" v-for="(code,index) in codes" :node="code">
-						<td>{{index+1}}</td>
-						<td>{{code.code}}</td>
-						<td class="center">{{code.createDate | formatDate('hh:mm')}}</td>
-						<td class="center">
-							<span class="text-success" v-if="code.state">未使用</span>
-							<span class="text-error" v-if="!code.state">已使用</span>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<section class="panel-code-item" v-for="(code,index) in codes" :node="code">
+				<header class="code-item-heading">
+					<span class="code-index"># {{index+1}}</span>
+					<span class="code-date">{{code.createDate | formatDate('hh:mm')}}</span>
+				</header>
+				<section class="code-item-body">
+					<section class="code-item-card">
+						<div class="code-card-content">
+							<div class="pure-g">
+								<div class="pure-u-1 pure-u-md-1-2">
+									<span class="title">邀请码：</span>
+									<span>{{code.code}}</span>
+								</div>
+								<div class="pure-u-1 pure-u-md-1-2">
+									<span class="title">使用状态：</span>
+									<span class="text-success" v-if="code.state">未使用</span>
+									<span class="text-error" v-if="!code.state">已使用</span>
+								</div>
+							</div>
+							<div class="pure-g" v-if="code.inviteeId">
+								<div class="pure-u-1 pure-u-md-1-2">
+									<span class="title">被邀请人：</span>
+									<span>{{code.inviteeId}}</span>
+								</div>
+								<div class="pure-u-1 pure-u-md-1-2">
+									<span class="title">使用时间：</span>
+									<span>{{code.consumeDate | formatDate('yyyy-MM-dd hh:mm')}}</span>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</section>
 		</div>
 	</section>
 </section>

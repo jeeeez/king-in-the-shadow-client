@@ -1,8 +1,28 @@
 #invitationCodes {
-	.pure-table {
-		th, td {
-			&.center {
-				text-align: center;
+	.panel-code-item {
+		border-bottom: 1px solid #eee;
+		margin-bottom: 10px;
+	}
+
+	.code-item-heading {
+		line-height: 30px;
+
+		.code-date {
+			float: right;
+			color: #aaa;
+		}
+	}
+
+	.code-item-body {
+		margin-top: 10px;
+
+		.pure-u-1 {
+			margin-bottom: 15px;
+
+			.title {
+				display: inline-block;
+				width: 80px;
+				text-align: right;
 			}
 		}
 	}

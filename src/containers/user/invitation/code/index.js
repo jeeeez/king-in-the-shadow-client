@@ -16,7 +16,12 @@ import Dialog from 'services/dialog';
 export default {
 	template,
 	data() {
-		return { codes: [], isFetching: true };
+		return {
+			codes: [],
+			isFetching: true,
+			isCreating: false,
+			maxInvitationCodeAmount: 10
+		};
 	},
 	mounted() {
 		Resources.invitation.codes.query().then(data => {
@@ -29,6 +34,17 @@ export default {
 	},
 
 	methods: {
+		create() {
+			if (this.isCreating) return;
 
+			this.isCreating = true;
+			Resources.invitation.codes.save().then(data => {
+				this.codes.push(data.result);
+			}).catch(error => {
+				Dialog.alert(error.message);
+			}).finally(() => {
+				this.isCreating = false;
+			});
+		}
 	}
 };
