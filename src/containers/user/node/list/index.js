@@ -10,13 +10,14 @@ import 'components/content-header';
 
 import template from './index.html';
 
+import G from 'constants';
 import Resources from 'resources';
 import Dialog from 'services/dialog';
 
 export default {
 	template,
 	data() {
-		return { nodes: [], isFetching: true };
+		return { G, nodes: [], isFetching: true };
 	},
 	mounted() {
 		Resources.nodes.query().then(data => {

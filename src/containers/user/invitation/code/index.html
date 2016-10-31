@@ -24,14 +24,14 @@
 			<!-- loading -->
 			<loader v-if="isFetching"></loader>
 
-			<section v-if="codes.length===0" class="panel-empty-item">
+			<section v-if="!isFetching && codes.length===0" class="panel-empty-item">
 				<span>今日尚未创建内测口令</span>
 			</section>
 
 			<section class="panel-code-item" v-for="(code,index) in codes" :node="code">
 				<header class="code-item-heading">
 					<span class="code-index"># {{index+1}}</span>
-					<span class="code-date">{{code.createDate | formatDate('hh:mm')}}</span>
+					<span class="code-date" title="口令创建时间">{{code.createDate | formatDate('hh:mm')}}</span>
 				</header>
 				<section class="code-item-body">
 					<section class="code-item-card">

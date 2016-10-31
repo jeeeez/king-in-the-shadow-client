@@ -2,6 +2,10 @@
 	.panel-code-item {
 		border-bottom: 1px solid #eee;
 		margin-bottom: 10px;
+
+		&:last-child {
+			border-bottom: none;
+		}
 	}
 
 	.panel-empty-item {
@@ -17,6 +21,7 @@
 		.code-date {
 			float: right;
 			color: #aaa;
+			font-size: 12px;
 		}
 	}
 
@@ -40,5 +45,15 @@
 
 	.text-error {
 		color: gray;
+	}
+
+	.loader {
+		display: block;
+		margin: 100px auto;
+	}
+
+	.image-loader {
+		width: 30px;
+		height: 30px;
 	}
 }
