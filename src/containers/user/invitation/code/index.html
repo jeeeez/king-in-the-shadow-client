@@ -1,9 +1,9 @@
 <section id="invitationCodes">
-	<content-header>今日邀请码</content-header>
+	<content-header>内测口令</content-header>
 	<section class="panel-list">
 		<div class="panel-item panel-attention">
-			<p class="info">每个账号每天可申请{{maxInvitationCodeAmount}}个邀请码，今日剩余{{maxInvitationCodeAmount - codes.length}}个邀请码名额。</p>
-			<p class="info">仅显示今日申请的邀请码，但之前申请的仍然有效，如需要请自行保存！</p>
+			<p class="info">每个账号每天可申请{{maxInvitationCodeAmount}}个内测口令，今日剩余{{maxInvitationCodeAmount - codes.length}}个口令名额。</p>
+			<p class="info">仅显示今日申请的口令，但之前申请的仍然有效，如需要请自行保存！</p>
 			<div class="oops">
 				<!-- 创建按钮 -->
 				<pk-button class="btn-create pure-input-1"
@@ -11,18 +11,22 @@
 					:disabled="isCreating"
 					v-on:click.native="create"
 					v-if="!isFetching && codes.length < maxInvitationCodeAmount">
-					创建邀请码
+					创建口令
 				</pk-button>
 				<!-- 今日邀请码已满 -->
 				<button class="pure-button pure-input-1" disabled
 					v-if="!isFetching && codes.length >= maxInvitationCodeAmount">
-					今日邀请码数量已使用完
+					今日口令数量已使用完
 				</button>
 			</div>
 		</div>
 		<div class="panel-item panel-code-list">
 			<!-- loading -->
 			<loader v-if="isFetching"></loader>
+
+			<section v-if="codes.length===0" class="panel-empty-item">
+				<span>今日尚未创建内测口令</span>
+			</section>
 
 			<section class="panel-code-item" v-for="(code,index) in codes" :node="code">
 				<header class="code-item-heading">
@@ -34,7 +38,7 @@
 						<div class="code-card-content">
 							<div class="pure-g">
 								<div class="pure-u-1 pure-u-md-1-2">
-									<span class="title">邀请码：</span>
+									<span class="title">内测口令：</span>
 									<span>{{code.code}}</span>
 								</div>
 								<div class="pure-u-1 pure-u-md-1-2">
