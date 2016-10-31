@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .panel-list {
 	padding: 0 20px;
 }
@@ -64,5 +66,15 @@
 		.pure-u-1 {
 			margin-bottom: 15px;
 		}
+	}
+}
+
+// 二维码弹出窗
+.ss-qrcode-modal {
+	h4 {}
+
+	.ss-qrcode {
+		width: 200px;
+		height: 200px;
 	}
 }

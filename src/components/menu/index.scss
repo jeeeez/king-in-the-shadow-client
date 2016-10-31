@@ -65,7 +65,8 @@
 			.fa {
 				color: #ca0202;
 				margin-right: 5px;
-				font-size: 18px;
+				font-size: 20px;
+				vertical-align: text-top;
 			}
 		}
 	}
@@ -74,7 +75,7 @@
 		display: none;
 		position: absolute;
 		right: 10px;
-		top: 5px;
+		top: 10px;
 
 		.pure-menu-item {
 			cursor: pointer;
@@ -97,6 +98,30 @@
 			}
 		}
 	}
+
+	.item-logout {
+		position: absolute;
+		bottom: 40px;
+		right: 55px;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		cursor: pointer;
+
+		&:hover {
+			.fa {
+				transform: rotateZ(180deg);
+				color: #616161;
+			}
+		}
+
+		.fa {
+			font-size: 24px;
+			transition: all 0.3s ease;
+			color: #ca0202;
+		}
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -104,11 +129,11 @@
 		width: 100%;
 		right: 0;
 		bottom: initial;
-		height: 40px;
+		height: 50px;
 		z-index: 10;
 
 		.user-box {
-			margin: 5px 10px;
+			margin: 10px;
 			text-align: left;
 
 			.avatar {
@@ -136,7 +161,7 @@
 
 		&.show {
 			.main-menu {
-				height: 172px;
+				height: 208px;
 
 				.pure-menu-item {
 					border-bottom: 1px solid #566080;
@@ -159,6 +184,10 @@
 				left: 0;
 				right: 0;
 			}
+		}
+
+		.item-logout {
+			display: none;
 		}
 	}
 }

@@ -11,11 +11,14 @@ import template from './index.html';
 import Vue from 'vue';
 
 Vue.component('pk-dialog', {
+	template,
 	props: {
 		config: { type: Object, required: true },
 		close: { type: Function, required: true }
 	},
-	template,
+	data() {
+		return { className: this.config.type + (this.config.className ? ' ' + this.config.className : '') };
+	},
 	methods: {
 		confirm() {
 			Promise.resolve(this.config.onConfirm()).then(() => {
