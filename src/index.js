@@ -23,3 +23,8 @@ new Vue({
 
 // 获取当前用户信息
 AccountService.get().catch(error => Dialog.alert(error.message));
+
+// 屏蔽选择 => user-select:none;
+document.body.onselectstart = document.body.ondrag = () => {
+	return false;
+};
