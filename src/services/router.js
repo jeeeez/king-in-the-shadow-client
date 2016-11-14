@@ -11,6 +11,9 @@ import Register from 'containers/register';
 import UserContainer from 'components/contains/user';
 import User from 'containers/user';
 
+import AdminContainer from 'components/contains/admin';
+import Admin from 'containers/admin';
+
 // otherwise
 import Contact from 'containers/otherwise/contact';
 import Declaration from 'containers/otherwise/declaration';
@@ -29,6 +32,14 @@ const routes = [
 			{ name: 'user.profile', path: 'profile', component: Vue.extend(User.Profile), beforeEnter: accoutAuth.beforeRouteEnter }, // , beforeEnter: accoutAuth.mixin.beforeRouteEnter
 			{ name: 'user.nodes', path: 'nodes', component: Vue.extend(User.Nodes), beforeEnter: accoutAuth.beforeRouteEnter },
 			{ name: 'user.invitationCodes', path: 'invitation/codes', component: User.InvitationCodes, beforeEnter: accoutAuth.beforeRouteEnter }
+		]
+	}, {
+		path: '/admin',
+		component: Vue.extend(AdminContainer),
+		children: [
+			{ name: 'admin.profile', path: 'profile', component: Vue.extend(User.Profile), beforeEnter: accoutAuth.beforeRouteEnter },
+			{ name: 'admin.nodes', path: 'nodes', component: Vue.extend(Admin.Nodes), beforeEnter: accoutAuth.beforeAdminRouteEnter },
+			{ name: 'admin.invitationCodes', path: 'invitation/codes', component: User.InvitationCodes, beforeEnter: accoutAuth.beforeRouteEnter }
 		]
 	},
 	{ path: '*', redirect: '/' }

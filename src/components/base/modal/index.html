@@ -1,0 +1,16 @@
+<section class="pk-dialog-container" v-bind:class="className">
+	<section class="mask" v-on:click="clickMask"></section>
+	<section class="pk-dialog">
+		<header class="pk-dialog-head">{{config.title}}</header>
+		<section class="pk-dialog-body">
+			<slot></slot>
+		</section>
+		<footer class="pk-dialog-footer pure-g" v-if="config.type==='alert'">
+			<pk-button class="btn-confirm pure-u-1" v-on:click.native="confirm">确定</pk-button>
+		</footer>
+		<footer class="pk-dialog-footer pure-g" v-if="config.type==='confirm'">
+			<pk-button class="pure-u-1-2 btn-cancel" v-on:click.native="cancel">取消</pk-button>
+			<pk-button class="pure-u-1-2 btn-confirm" v-on:click.native="confirm">确定</pk-button>
+		</footer>
+	</section>
+</section>

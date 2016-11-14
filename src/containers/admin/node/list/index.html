@@ -1,0 +1,54 @@
+<section id="nodes">
+	<content-header>节点列表</content-header>
+	<section class="panel-list">
+		<div class="panel-item panel-attention">
+			<p class="info"><strong>注意！</strong></p>
+			<p class="info">请勿在任何地方公开节点地址！</p>
+
+			<div class="oops">
+				<!-- 创建按钮 -->
+				<pk-button class="btn-create pure-input-1"
+					:is-loading="isCreating"
+					:disabled="isCreating"
+					v-on:click.native="create"
+					v-if="!isFetching">
+					添加节点
+				</pk-button>
+			</div>
+		</div>
+		<div class="panel-item panel-node-list">
+			<!-- loading -->
+			<loader v-if="isFetching"></loader>
+
+			<section v-if="!isFetching && nodes.length===0" class="panel-empty-item">
+				<span>尚未添加节点</span>
+			</section>
+
+			<div class="panel-node-item" v-for="node in nodes" :node="node">
+				<header class="node-item-heading">
+					<span class="fa fa-qrcode" v-on:click="showQRCode(node)"></span>
+					<span class="node-name">{{node.name}}</span>
+					<span class="tips">（点击二维码图标可查看节点二维码）</span>
+				</header>
+				<section class="node-item-body">
+					<section class="node-item-card">
+						<!-- <h4>{{node.name}}</h4> -->
+						<div class="node-card-content">
+							<div class="pure-g">
+								<div class="pure-u-1 pure-u-md-1-2">地址：{{node.host}}</div>
+								<div class="pure-u-1 pure-u-md-1-2">加密：{{node.protocol}}</div>
+							</div>
+							<div class="pure-g">
+								<div class="pure-u-1 pure-u-md-1-2">端口：{{G.account.port}}</div>
+								<div class="pure-u-1 pure-u-md-1-2">密码：{{G.account.auth}}</div>
+							</div>
+							<p class="tips">
+								请勿在任何地方公开节点地址！
+							</p>
+						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+	</section>
+</section>
