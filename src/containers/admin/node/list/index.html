@@ -10,7 +10,7 @@
 				<pk-button class="btn-create pure-input-1"
 					:is-loading="isCreating"
 					:disabled="isCreating"
-					v-on:click.native="create"
+					v-on:click.native="update()"
 					v-if="!isFetching">
 					添加节点
 				</pk-button>
@@ -29,6 +29,9 @@
 					<span class="fa fa-qrcode" v-on:click="showQRCode(node)"></span>
 					<span class="node-name">{{node.name}}</span>
 					<span class="tips">（点击二维码图标可查看节点二维码）</span>
+
+					<span class="fa fa-wrench" v-on:click="update(node)" title="修改"></span>
+					<pk-button :is-loading="node.isInitializing" :disabled="node.isInitializing" v-on:click.native="initialize(node)">初始化</pk-button>
 				</header>
 				<section class="node-item-body">
 					<section class="node-item-card">
@@ -51,4 +54,7 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- 节点编辑弹出层 -->
+	<node-editor v-if="showNodeEditor" :node="activeNode" :destroy="()=>{showNodeEditor=false;}" :afterSave="afterSaveNode"></node-editor>
 </section>

@@ -1,0 +1,37 @@
+<!-- 节点信息编辑弹出层 -->
+<pk-modal :title="node.id?'编辑节点':'添加节点'">
+	<form class="pure-form pure-form-aligned node-editor">
+		<tips v-if="errorMessage" type="error" :message="errorMessage"></tips>
+		<fieldset class="pure-group">
+			<div class="pure-control-group">
+				<label>节点名称</label>
+				<input type="text" placeholder="节点名称" v-model="node.name" />
+			</div>
+			<div class="pure-control-group">
+				<label>节点IP/域名</label>
+				<input type="text" placeholder="节点IP/域名" v-model="node.host" />
+			</div>
+			<div class="pure-control-group">
+				<label>登录用户名</label>
+				<input type="text" placeholder="登录用户名" v-model="node.username" />
+			</div>
+			<div class="pure-control-group">
+				<label>登录端口</label>
+				<input type="number" placeholder="登录端口" v-model="node.port" />
+			</div>
+			<div class="pure-control-group">
+				<label>私钥文件路径</label>
+				<input type="text" placeholder="私钥文件路径" v-model="node.privateKeyPath" />
+			</div>
+			<div class="pure-control-group">
+				<label>SS加密算法</label>
+				<input type="text" placeholder="SS加密算法" v-model="node.protocol" />
+			</div>
+
+			<div class="pure-controls">
+				<pk-button class="" :is-loading="isSaveing" v-on:click.native="save">保存</pk-button>
+				<pk-button v-on:click.native="close">取消</pk-button>
+			</div>
+		</fieldset>
+	</form>
+</pk-modal>

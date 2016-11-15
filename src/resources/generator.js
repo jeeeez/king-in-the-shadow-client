@@ -9,12 +9,12 @@ Vue.http.interceptors.push((request, next) => {
 });
 
 /**
- * get
- * save
- * query
- * update
- * remove
- * delete
+ * get => get
+ * save => post
+ * query => get
+ * update => put
+ * remove => ...
+ * delete => delete
  */
 const generator = (...props) => {
 	const resource = Vue.resource(...props);

@@ -13,12 +13,13 @@ import Vue from 'vue';
 Vue.component('pk-modal', {
 	template,
 	props: {
-		config: { type: Object, required: true },
-		destroy: { type: Function, required: true },
+		// config: { type: Object, required: true },
+		// destroy: { type: Function, required: true },
+		title: { type: String },
 		beforeClose: { type: Function } // must be a promise function
 	},
 	data() {
-		return { className: this.config.type + (this.config.className ? ' ' + this.config.className : '') };
+		return { className: '' };
 	},
 	methods: {
 		close() {

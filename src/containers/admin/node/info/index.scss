@@ -1,0 +1,16 @@
+.node-editor {
+	.pure-control-group {
+		> label {
+			width: 6em;
+		}
+
+		> input {
+			display: inline-block !important;
+			color: #444;
+		}
+	}
+
+	.tips {
+		margin: 10px 0;
+	}
+}
