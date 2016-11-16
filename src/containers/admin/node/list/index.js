@@ -37,7 +37,10 @@ export default {
 	methods: {
 		init() {
 			Resources.nodes.query().then(data => {
-				this.nodes = data.result;
+				this.nodes = data.result.map(node => {
+					node.isInitializing = false;
+					return node;
+				});
 			}).catch(error => {
 				Dialog.alert(error.message);
 			}).finally(() => {
@@ -74,10 +77,9 @@ export default {
 		// 初始化节点
 		initialize(node) {
 			node.isInitializing = true;
-			console.log(node);
-			// Resources.initializeNode.save({ nodeId: node.id }).then(() => {
-			// 	Dialog.alert('初始化成功！');
-			// }).catch(error => Dialog.alert(error.message));
+			Resources.initializeNode.save({ nodeId: node.id }).then(() => {
+				Dialog.alert('初始化成功！');
+			}).catch(error => Dialog.alert(error.message));
 		}
 	}
 };
