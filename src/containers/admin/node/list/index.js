@@ -77,9 +77,11 @@ export default {
 		// 初始化节点
 		initialize(node) {
 			node.isInitializing = true;
-			Resources.initializeNode.save({ nodeId: node.id }).then(() => {
+			Resources.initializeNode.save({ nodeId: node.id }, {}).then(() => {
 				Dialog.alert('初始化成功！');
-			}).catch(error => Dialog.alert(error.message));
+			}).catch(error => Dialog.alert(error.message)).finally(() => {
+				node.isInitializing = false;
+			});
 		}
 	}
 };
