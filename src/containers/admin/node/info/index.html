@@ -29,8 +29,8 @@
 			</div>
 
 			<div class="pure-controls">
-				<pk-button class="" :is-loading="isSaveing" v-on:click.native="save">保存</pk-button>
-				<pk-button v-on:click.native="close">取消</pk-button>
+				<pk-button class="" :is-loading="isSaveing" v-on:click.native="save($event)">保存</pk-button>
+				<pk-button v-on:click.native="close($event)">取消</pk-button>
 			</div>
 		</fieldset>
 	</form>

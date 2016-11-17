@@ -27,7 +27,9 @@ Vue.component('node-editor', {
 		return { isSaveing: false, errorMessage: '' };
 	},
 	methods: {
-		save() {
+		save(event) {
+			event.preventDefault();
+
 			if (Vlidation.empty(this.node.name)) {
 				return this.errorMessage = '节点名称不能为空';
 			}
@@ -51,7 +53,8 @@ Vue.component('node-editor', {
 				this.isSaveing = false;
 			});
 		},
-		close() {
+		close(event) {
+			event.preventDefault();
 			this.destroy();
 		}
 	}
