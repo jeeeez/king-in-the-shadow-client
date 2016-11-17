@@ -1,0 +1,69 @@
+#users {
+	.panel-attention {
+		> p {
+			font-size: 14px;
+			margin: 15px 0;
+
+			> strong {
+				font-size: 20px;
+				font-weight: 400;
+			}
+		}
+	}
+
+	.panel-user-item {
+		border-bottom: 1px solid #eee;
+		padding: 10px 0;
+		margin-bottom: 10px;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		.user-item-heading {
+			margin-bottom: 20px;
+			position: relative;
+
+			.validate-info {
+				position: absolute;
+				right: 15px;
+				font-size: 13px;
+
+				&.success {
+					color: #07b507;
+				}
+
+				&.error {
+					color: #f36161;
+				}
+			}
+
+			.user-name {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.loader {
+		display: block;
+		margin: 100px auto;
+	}
+
+	.image-loader {
+		width: 30px;
+		height: 30px;
+	}
+
+	.user-card-content {
+		.pure-u-1 {
+			margin-bottom: 15px;
+		}
+	}
+
+	.panel-empty-item {
+		text-align: center;
+		font-size: 14px;
+		color: #aaa;
+		margin: 30px auto;
+	}
+}

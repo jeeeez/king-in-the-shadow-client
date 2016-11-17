@@ -1,0 +1,38 @@
+<section id="users">
+	<content-header>用户列表</content-header>
+	<section class="panel-list">
+		<div class="panel-item panel-attention">
+			<p>我梦见我们牵着手一起走向夕阳。</p>
+			<p>微风吹拂着小草，我想那就是诗和远方。</p>
+			<p>如果还有明天...</p>
+		</div>
+
+		<div class="panel-item panel-node-list">
+			<!-- loading -->
+			<loader v-if="isFetching"></loader>
+
+			<div class="panel-user-item" v-for="user in users" :user="user">
+				<header class="user-item-heading">
+					<span class="user-name">{{user.email}}</span>
+
+					<span class="validate-info success" v-if="user.validated">已验证</span>
+					<span class="validate-info error" v-if="!user.validated">未验证</span>
+				</header>
+				<section class="user-item-body">
+					<section class="user-item-card">
+						<div class="user-card-content">
+							<div class="pure-g">
+								<div class="pure-u-1 pure-u-md-1-2">账户角色：{{{admin:'管理员',user:'普通成员'}[user.role]}}</div>
+								<div class="pure-u-1 pure-u-md-1-2">注册时间：{{user.createDate | formatDate('yyyy-MM-dd hh:mm')}}</div>
+							</div>
+							<div class="pure-g">
+								<div class="pure-u-1 pure-u-md-1-2">代理端口：{{user.port}}</div>
+								<div class="pure-u-1 pure-u-md-1-2">代理密码：{{user.auth}}</div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+	</section>
+</section>
