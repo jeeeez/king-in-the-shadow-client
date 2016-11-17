@@ -76,11 +76,13 @@ export default {
 
 		// 初始化节点
 		initialize(node) {
-			node.isInitializing = true;
-			Resources.initializeNode.save({ nodeId: node.id }, {}).then(() => {
-				Dialog.alert('初始化成功！');
-			}).catch(error => Dialog.alert(error.message)).finally(() => {
-				node.isInitializing = false;
+			Dialog.confirm('初始化操作比较慢哟！', () => {
+				node.isInitializing = true;
+				Resources.initializeNode.save({ nodeId: node.id }, {}).then(() => {
+					Dialog.alert('初始化成功！');
+				}).catch(error => Dialog.alert(error.message)).finally(() => {
+					node.isInitializing = false;
+				});
 			});
 		}
 	}

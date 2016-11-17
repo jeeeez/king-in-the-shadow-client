@@ -25,13 +25,15 @@
 			</section>
 
 			<div class="panel-node-item" v-for="node in nodes" :node="node">
-				<header class="node-item-heading">
+				<header class="node-item-heading clearfix">
 					<span class="fa fa-qrcode" v-on:click="showQRCode(node)"></span>
 					<span class="node-name">{{node.name}}</span>
 					<span class="tips">（点击二维码图标可查看节点二维码）</span>
-
-					<span class="fa fa-wrench" v-on:click="update(node)" title="修改"></span>
-					<pk-button :is-loading="node.isInitializing" :disabled="node.isInitializing" v-on:click.native="initialize(node)">初始化</pk-button>
+					
+					<div class="tools">
+						<span class="editor fa fa-wrench" v-on:click="update(node)" title="修改"></span>
+						<pk-button class="btn-init" :is-loading="node.isInitializing" :disabled="node.isInitializing" v-on:click.native="initialize(node)">初始化</pk-button>
+					</div>
 				</header>
 				<section class="node-item-body">
 					<section class="node-item-card">

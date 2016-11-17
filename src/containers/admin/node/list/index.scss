@@ -37,8 +37,9 @@
 		.node-item-heading {
 			margin-bottom: 20px;
 
-			.fa-qrcode {
+			.fa-qrcode, .editor {
 				cursor: pointer;
+				margin-right: 10px;
 			}
 
 			.node-name {
@@ -48,6 +49,14 @@
 			.tips {
 				font-size: 12px;
 				color: #888;
+			}
+
+			.tools {
+				float: right;
+
+				.btn-init {
+					padding: 0.1em 0.5em;
+				}
 			}
 		}
 	}
