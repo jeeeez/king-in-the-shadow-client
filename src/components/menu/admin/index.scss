@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+	.sidebar-menu.admin-menu {
+		&.show {
+			.main-menu {
+				height: 261px;
+			}
+		}
+	}
+}

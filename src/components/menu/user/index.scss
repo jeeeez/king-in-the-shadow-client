@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+	.sidebar-menu.user-menu {
+		&.show {
+			.main-menu {
+				height: 208px;
+			}
+		}
+	}
+}

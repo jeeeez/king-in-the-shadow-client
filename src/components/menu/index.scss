@@ -63,7 +63,7 @@
 			display: none;
 
 			.fa {
-				color: #ca0202;
+				color: #fb4b4b;
 				margin-right: 5px;
 				font-size: 20px;
 				vertical-align: text-top;
@@ -82,6 +82,7 @@
 			position: absolute;
 			right: 0;
 			top: 0;
+			border-bottom: none;
 		}
 
 		.custom-icon.icon-bars {
@@ -119,7 +120,7 @@
 		.fa {
 			font-size: 24px;
 			transition: all 0.3s ease;
-			color: #ca0202;
+			color: #fb4b4b;
 		}
 	}
 }
@@ -143,16 +144,30 @@
 			}
 		}
 
+		.pure-menu-list {
+			background-color: #404861;
+		}
+
 		.pure-menu-item {
+			border-bottom: 1px solid #566080;
+
 			&.menu-item-logout {
 				display: block;
+			}
+
+			.pure-menu-link {
+				color: #bbb;
+
+				&.router-link-active {
+					background-color: #323b56;
+					color: #fff;
+				}
 			}
 		}
 
 		.main-menu {
 			height: 0;
 			text-align: center;
-			background-color: #404861;
 		}
 
 		.oops-menu {
@@ -160,23 +175,6 @@
 		}
 
 		&.show {
-			.main-menu {
-				height: 208px;
-
-				.pure-menu-item {
-					border-bottom: 1px solid #566080;
-
-					.pure-menu-link {
-						color: #bbb;
-
-						&.router-link-active {
-							background-color: transparent;
-							color: #fff;
-						}
-					}
-				}
-			}
-
 			.mask {
 				position: fixed;
 				top: 0;
