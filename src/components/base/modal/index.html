@@ -3,6 +3,7 @@
 	<section class="pk-modal">
 		<header class="pk-modal-head">{{title}}</header>
 		<section class="pk-modal-body">
+			<div class="inner-mask" v-if="innerMask"></div>
 			<slot></slot>
 		</section>
 	</section>

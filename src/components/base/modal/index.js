@@ -16,6 +16,7 @@ Vue.component('pk-modal', {
 		// config: { type: Object, required: true },
 		// destroy: { type: Function, required: true },
 		title: { type: String },
+		innerMask: { type: Boolean },
 		beforeClose: { type: Function } // must be a promise function
 	},
 	data() {
