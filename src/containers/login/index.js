@@ -10,6 +10,7 @@ import Resources from 'resources';
 import Validation from 'services/validation';
 import Dialog from 'services/dialog';
 import router from 'services/router';
+import StoreService from 'services/store';
 
 export default {
 	template,
@@ -31,6 +32,9 @@ export default {
 			Resources.account.login.save({ email: this.email, password: this.password }).then(response => {
 				G.account = response.result;
 				this.isLogin = false;
+				StoreService.set(G.TOKEN_KEY, G.account.token);
+
+				// 页面跳转
 				router.push({ name: 'user.profile' });
 			}).catch(error => {
 				Dialog.alert(error.message);

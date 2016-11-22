@@ -1,10 +1,14 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 
+import G from 'constants';
+import StoreService from 'services/store';
+
 Vue.use(VueResource);
 
 // 拦截器
 Vue.http.interceptors.push((request, next) => {
+	request.headers.append(G.TOKEN_KEY, StoreService.get(G.TOKEN_KEY));
 	next();
 });
 

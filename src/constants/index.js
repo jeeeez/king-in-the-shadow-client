@@ -17,5 +17,6 @@ export default {
 	showUserMenu: false,
 	// 管理员菜单显示标识
 	showAdminMenu: false,
-	defaultAvatar: require('assets/logo.png')
+	defaultAvatar: require('assets/logo.png'),
+	TOKEN_KEY: 'KING-TOKEN'
 };
