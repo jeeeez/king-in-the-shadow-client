@@ -8,7 +8,8 @@ Vue.use(VueResource);
 
 // 拦截器
 Vue.http.interceptors.push((request, next) => {
-	request.headers.append(G.TOKEN_KEY, StoreService.get(G.TOKEN_KEY));
+	const token = StoreService.get(G.TOKEN_KEY) || '';
+	request.headers.append(G.TOKEN_KEY, token);
 	next();
 });
 
