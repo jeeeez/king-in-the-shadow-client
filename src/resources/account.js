@@ -12,5 +12,7 @@ export default {
 	// 查看当前用户的登录状态
 	check: ResourceGenerator('/api/account/check'),
 	// 登出
-	logout: ResourceGenerator('/api/account/logout')
+	logout: ResourceGenerator('/api/account/logout'),
+
+	update: ResourceGenerator('/api/account/update')
 };
