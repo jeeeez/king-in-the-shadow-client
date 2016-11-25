@@ -19,7 +19,8 @@ const validation = {
 	email: email => /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email),
 	URL: str => patternURL.test(str),
 	invitationCode: str => /[0-9a-zA-Z]{8}/.test(str),
-	password: str => /^[\S]{6,12}$/.test(str)
+	password: str => /^[\S]{6,12}$/.test(str),
+	VPNAuth: str => /^[0-9a-zA-Z]{4,10}$/.test(str)
 };
 
 export default validation;

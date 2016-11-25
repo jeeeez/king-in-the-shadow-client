@@ -33,6 +33,8 @@ export default {
 			// 数据验证
 			if (Validation.empty(this.VPNEditorData.password))
 				return this.VPNEditorData.errorMessage = '新VPN密码不能为空！';
+			if (!Validation.VPNAuth(this.VPNEditorData.password))
+				return this.VPNEditorData.errorMessage = 'VPN密码只能为4-10位的数字字母组合！';
 			if (this.VPNEditorData.password !== this.VPNEditorData.confirmPSW)
 				return this.VPNEditorData.errorMessage = '两次新VPN密码不一致！';
 			if (Validation.empty(this.VPNEditorData.accountPSW))

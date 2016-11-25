@@ -33,8 +33,19 @@
 	}
 
 	.pk-modal-container {
+		.oops {
+			font-size: 12px;
+			text-align: left;
+			margin: 5px;
+			color: #529e42;
+		}
+
 		.tips {
 			margin-bottom: 10px;
+		}
+
+		.pure-form {
+			margin-top: 20px;
 		}
 
 		.pure-control-group {

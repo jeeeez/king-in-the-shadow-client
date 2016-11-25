@@ -23,16 +23,19 @@
 
 	<!-- VPN密码修改弹出层 -->
 	<pk-modal title="修改VPN密码" v-if="VPNEditorData.show" :inner-mask="VPNEditorData.isSaveing">
+		<p class="oops">1、由于该操作的特殊性，系统可能会在将来的某个时间执行修改操作；</p>
+		<p class="oops">2、修改VPN密码之前请确认记录好原VPN密码或保存二维码图片；</p>
+		<p class="oops">3、如有任何疑问可在微信公众号留言，我们会及时联系并为你解决！</p>
 		<form class="pure-form pure-form-aligned">
 			<tips v-if="VPNEditorData.errorMessage" type="error" v-bind:message="VPNEditorData.errorMessage"></tips>
 			<fieldset class="pure-group">
 				<div class="pure-control-group">
 					<label>新VPN密码</label>
-					<input type="password" placeholder="请输入新的VPN密码" v-model="VPNEditorData.password" />
+					<input type="text" placeholder="请输入新的VPN密码" v-model="VPNEditorData.password" />
 				</div>
 				<div class="pure-control-group">
-					<label>确认VPN密码</label>
-					<input type="password" placeholder="请再次输入新的VPN密码" v-model="VPNEditorData.confirmPSW" />
+					<label>确认新密码</label>
+					<input type="text" placeholder="请再次输入新的VPN密码" v-model="VPNEditorData.confirmPSW" />
 				</div>
 				<div class="pure-control-group">
 					<label>登录密码</label>
@@ -56,7 +59,7 @@
 					<input type="password" placeholder="请输入新的登录密码" v-model="PSWEditorData.password" />
 				</div>
 				<div class="pure-control-group">
-					<label>确认新登录密码</label>
+					<label>确认新密码</label>
 					<input type="password" placeholder="请再次输入新的登录密码" v-model="PSWEditorData.confirmPSW" />
 				</div>
 				<div class="pure-control-group">
