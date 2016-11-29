@@ -44,13 +44,9 @@
 			margin-bottom: 10px;
 		}
 
-		.pure-form {
-			margin-top: 20px;
-		}
-
 		.pure-control-group {
 			> label {
-				width: 7em;
+				width: 5em;
 			}
 
 			> input {
@@ -58,6 +54,12 @@
 				color: #444;
 				border-radius: 4px;
 				vertical-align: sub;
+			}
+		}
+
+		&.VPN {
+			.pure-form {
+				margin-top: 20px;
 			}
 		}
 	}
@@ -73,6 +75,27 @@
 
 				.btn-link {
 					margin: 5px;
+				}
+			}
+		}
+
+		.pk-modal-container {
+			.pure-control-group {
+				text-align: left;
+
+				> label {
+					margin-bottom: 5px;
+					text-align: left;
+				}
+
+				> input {
+					width: 100%;
+				}
+			}
+
+			.pure-form-aligned {
+				.pure-controls {
+					margin: 1.5em 0 0;
 				}
 			}
 		}

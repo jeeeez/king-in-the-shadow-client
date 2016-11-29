@@ -28,11 +28,19 @@
 		border-radius: 4px;
 		overflow: hidden;
 		box-shadow: inset 1px 1px 5px #fff;
+		max-height: 70vh;
+		padding: 50px 0 0;
+
+		.pk-modal-head, .pk-modal-footer {
+			position: absolute;
+			left: 0;
+			right: 0;
+		}
 
 		.pk-modal-head {
-			@include linearGradient(#fdfdfd, #fcfcfc);
+			@include linearGradient(#fdfdfd, #fefefe);
 
-			border-bottom: 1px solid #f2f2f2;
+			border-bottom: 1px solid #fafafa;
 			padding: 12px 15px;
 			text-align: center;
 			font-size: 16px;
@@ -40,6 +48,7 @@
 			color: #444;
 			-webkit-user-drag: none;
 			-webkit-user-select: none;
+			top: 0;
 		}
 
 		.pk-modal-body {
@@ -49,6 +58,7 @@
 			text-align: center;
 			color: #888;
 			position: relative;
+			overflow: auto;
 
 			.inner-mask {
 				position: absolute;
@@ -64,6 +74,7 @@
 		.pk-modal-footer {
 			background-color: #fcfcfc;
 			border-top: 1px solid #f2f2f2;
+			bottom: 0;
 
 			.pure-button, .pure-button:hover, .pure-button:focus, .pure-button:active {
 				background-color: transparent;
@@ -79,6 +90,15 @@
 					color: #8ad68a;
 				}
 			}
+		}
+	}
+}
+
+@media only screen and (max-width: 520px) {
+	.pk-modal-container {
+		.pk-modal {
+			width: 300px;
+			margin-left: -150px;
 		}
 	}
 }
