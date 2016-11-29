@@ -62,3 +62,19 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 520px) {
+	#dashboard {
+		.dashboard-contain {
+			.controls {
+				position: initial;
+				text-align: center;
+				margin-bottom: 10px;
+
+				.btn-link {
+					margin: 5px;
+				}
+			}
+		}
+	}
+}
