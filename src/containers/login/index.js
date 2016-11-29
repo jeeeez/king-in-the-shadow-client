@@ -15,7 +15,7 @@ import StoreService from 'services/store';
 export default {
 	template,
 	data: () => {
-		return { errorMessage: '', email: '450994392@qq.com', password: 'xin5383139', isLogin: false };
+		return { errorMessage: '', email: '', password: '', isLogin: false };
 	},
 	methods: {
 		login(e) {
