@@ -1,7 +1,6 @@
 <!-- 节点信息编辑弹出层 -->
 <pk-modal :title="node.id?'编辑节点':'添加节点'">
 	<form class="pure-form pure-form-aligned node-editor">
-		<tips v-if="errorMessage" type="error" :message="errorMessage"></tips>
 		<fieldset class="pure-group">
 			<div class="pure-control-group">
 				<label>节点名称</label>
@@ -27,6 +26,8 @@
 				<label>SS加密算法</label>
 				<input type="text" placeholder="SS加密算法" v-model="node.protocol" />
 			</div>
+
+			<tips v-if="errorMessage" type="error" :message="errorMessage"></tips>
 
 			<div class="pure-controls">
 				<pk-button class="" :is-loading="isSaveing" v-on:click.native="save($event)">保存</pk-button>

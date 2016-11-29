@@ -31,7 +31,7 @@ export default {
 
 	methods: {
 		showConfigInfo() {
-			Dialog.alert('然后点我也并没有什么卵用！');
+			Dialog.alert('然而点我也并没有什么卵用！');
 		},
 		showQRCode(node) {
 			Dialog.alert(`<h4>使用 Shadowrocket App 扫描下方二维码可自动完成配置</h4><img class="ss-qrcode" src="${node.URI}" />`, {

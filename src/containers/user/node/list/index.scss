@@ -71,10 +71,27 @@
 
 // 二维码弹出窗
 .ss-qrcode-modal {
-	h4 {}
+	h4 {
+		margin: 20px;
+	}
 
 	.ss-qrcode {
 		width: 200px;
 		height: 200px;
+	}
+}
+
+@media only screen and (max-width: 520px) {
+	.ss-qrcode-modal {
+		.pk-dialog-body {
+			h4 {
+				margin: 10px;
+			}
+		}
+
+		.ss-qrcode {
+			width: 160px;
+			height: 160px;
+		}
 	}
 }
