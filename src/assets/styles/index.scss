@@ -5,6 +5,7 @@
 
 // @import "../../../node_modules/purecss/build/pure-nr.css";
 @import "../../../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../../../node_modules/animate.css/animate.css";
 
 @import "./pure-rewrite";
 @import "./mixin";
@@ -20,6 +21,7 @@ html, body {
 	color: #333;
 	user-select: none;
 	-webkit-user-select: none;
+	font-size: 14px;
 }
 
 .text-right {

@@ -5,6 +5,9 @@
  * @date    2016-09-18 23:26:01
  */
 
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.css';
+
 import './index.scss';
 import template from './index.html';
 
@@ -19,5 +22,35 @@ export default {
 	},
 	created() {
 
+		setTimeout(() => {
+			const swiper = new Swiper('.swiper-container', {
+				// Optional parameters
+				// direction: 'vertical',
+				loop: true,
+				// autoplay: 5000,
+
+				// If we need pagination
+				pagination: '.swiper-pagination',
+				effect: 'coverflow',
+				grabCursor: true,
+				centeredSlides: true,
+				slidesPerView: 'auto',
+				coverflow: {
+					rotate: 0,
+					stretch: 262,
+					depth: 500,
+					modifier: 1,
+					slideShadows: false
+				},
+
+				// Navigation arrows
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+
+				// And if we need scrollbar
+				// scrollbar: '.swiper-scrollbar',
+			});
+			console.log(swiper);
+		}, 200);
 	}
 };
