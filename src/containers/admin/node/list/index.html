@@ -57,6 +57,42 @@
 		</div>
 	</section>
 
-	<!-- 节点编辑弹出层 -->
-	<node-editor v-if="showNodeEditor" :node="activeNode" :destroy="()=>{showNodeEditor=false;}" :afterSave="afterSaveNode"></node-editor>
+	<!-- 节点信息编辑弹出层 -->
+	<pk-modal v-if="showNodeEditor" :title="activeNode.id?'编辑节点':'添加节点'">
+		<form class="pure-form pure-form-aligned node-editor">
+			<fieldset class="pure-group">
+				<div class="pure-control-group">
+					<label>节点名称</label>
+					<input type="text" placeholder="节点名称" v-model="activeNode.name" />
+				</div>
+				<div class="pure-control-group">
+					<label>节点IP/域名</label>
+					<input type="text" placeholder="节点IP/域名" v-model="activeNode.host" />
+				</div>
+				<div class="pure-control-group">
+					<label>登录用户名</label>
+					<input type="text" placeholder="登录用户名" v-model="activeNode.username" />
+				</div>
+				<div class="pure-control-group">
+					<label>登录端口</label>
+					<input type="number" placeholder="登录端口" v-model="activeNode.port" />
+				</div>
+				<div class="pure-control-group">
+					<label>私钥文件路径</label>
+					<input type="text" placeholder="私钥文件路径" v-model="activeNode.privateKeyPath" />
+				</div>
+				<div class="pure-control-group">
+					<label>SS加密算法</label>
+					<input type="text" placeholder="SS加密算法" v-model="activeNode.protocol" />
+				</div>
+
+				<tips v-if="activeNode.errorMessage" type="error" :message="activeNode.errorMessage"></tips>
+
+				<div class="pure-controls">
+					<pk-button class="" :is-loading="activeNode.isSaveing" v-on:click.native="saveNode($event)">保存</pk-button>
+					<pk-button v-on:click.native="$event.preventDefault();showNodeEditor=false;">取消</pk-button>
+				</div>
+			</fieldset>
+		</form>
+	</pk-modal>
 </section>

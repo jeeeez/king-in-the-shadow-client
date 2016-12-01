@@ -9,15 +9,15 @@ import './index.scss';
 import 'components/content-header';
 
 import 'components/base/modal';
+import 'components/base/tips';
+import 'components/base/button';
 
 import template from './index.html';
 
 import G from 'constants';
 import Resources from 'resources';
 import Dialog from 'services/dialog';
-// import Modal from 'services/modal';
-
-import '../info/index.js';
+import Vlidation from 'services/validation';
 
 export default {
 	template,
@@ -27,7 +27,11 @@ export default {
 			nodes: [],
 			isFetching: true,
 			isCreating: false,
-			showNodeEditor: false
+			showNodeEditor: false,
+			activeNode: {
+				errorMessage: '',
+				isSaveing: false
+			}
 		};
 	},
 	mounted() {
@@ -47,6 +51,29 @@ export default {
 				this.isFetching = false;
 			});
 		},
+
+		saveNode(evt) {
+			evt.preventDefault();
+			if (Vlidation.empty(this.activeNode.name)) {
+				return this.activeNode.errorMessage = '节点名称不能为空';
+			}
+			if (Vlidation.empty(this.activeNode.port)) {
+				return this.activeNode.errorMessage = '节点IP/域名不能为空';
+			}
+			this.activeNode.errorMessage = '';
+
+			this.activeNode.isSaveing = true;
+
+			(this.activeNode.id ? Resources.node.update({ nodeId: this.activeNode.id }, this.activeNode) : Resources.nodes.save(this.activeNode)).then(() => {
+				this.showNodeEditor = false;
+				this.init();
+			}).catch(error => {
+				this.activeNode.errorMessage = error.message;
+			}).finally(() => {
+				this.activeNode.isSaveing = false;
+			});
+		},
+
 		showQRCode(node) {
 			Dialog.alert(`<h4>使用 Shadowrocket App 扫描下方二维码可自动完成配置</h4><img class="ss-qrcode" src="${node.URI}" />`, {
 				title: '节点二维码',
@@ -59,19 +86,13 @@ export default {
 		 * 1、如果node为空则创建，如果不为空则修改
 		 */
 		update(node) {
-			this.activeNode = node || {
+			this.activeNode = Object.assign(this.activeNode, node || {
 				username: 'root',
 				port: 22,
 				privateKeyPath: '/root/.ssh/id_rsa',
 				protocol: 'rc4-md5'
-			};
+			});
 			this.showNodeEditor = true;
-		},
-
-		// 节点保存成功回调函数
-		afterSaveNode(newNode, oldNode) {
-			this.showNodeEditor = false;
-			this.init();
 		},
 
 		// 初始化节点

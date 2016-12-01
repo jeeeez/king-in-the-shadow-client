@@ -50,7 +50,7 @@ export default {
 				if (!account || !account.id) {
 					return router.replace('login');
 				}
-				if (account.role === ROLE.ADMIN) {
+				if (account.role === ROLE.USER) {
 					return router.replace('user.profile');
 				}
 				if (account.role === ROLE.ADMIN) {
