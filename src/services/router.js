@@ -37,10 +37,10 @@ const routes = [
 		path: '/admin',
 		component: Vue.extend(AdminContainer),
 		children: [
-			{ name: 'admin.profile', path: 'profile', component: Vue.extend(User.Profile), beforeEnter: accoutAuth.beforeRouteEnter },
+			{ name: 'admin.profile', path: 'profile', component: Vue.extend(User.Profile), beforeEnter: accoutAuth.beforeAdminRouteEnter },
 			{ name: 'admin.nodes', path: 'nodes', component: Vue.extend(Admin.Nodes), beforeEnter: accoutAuth.beforeAdminRouteEnter },
 			{ name: 'admin.users', path: 'users', component: Vue.extend(Admin.Users), beforeEnter: accoutAuth.beforeAdminRouteEnter },
-			{ name: 'admin.invitationCodes', path: 'invitation/codes', component: User.InvitationCodes, beforeEnter: accoutAuth.beforeRouteEnter }
+			{ name: 'admin.invitationCodes', path: 'invitation/codes', component: User.InvitationCodes, beforeEnter: accoutAuth.beforeAdminRouteEnter }
 		]
 	},
 	{ path: '*', redirect: '/' }
