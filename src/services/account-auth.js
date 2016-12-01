@@ -29,7 +29,8 @@ const adminAccountAuth = () => G.account && G.account.role === ROLE.ADMIN;
 
 
 export default {
-	beforeRouteEnter(to, from, next) {
+	// 普通用户页面验证
+	beforeUserRouteEnter(to, from, next) {
 			if (accoutAuth()) return next();
 
 			AccountService.get().then(account => {
@@ -40,6 +41,8 @@ export default {
 				}
 			}).catch(error => Dialog.alert(error.message));
 		},
+
+		// 管理员页面验证
 		beforeAdminRouteEnter(to, from, next) {
 			if (adminAccountAuth()) return next();
 
