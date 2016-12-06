@@ -28,7 +28,7 @@
 	.banner {
 		@include linearCarveUp(rgb(6, 150, 222), rgb(0, 184, 97));
 
-		padding: 80px 0;
+		padding: 40px 0;
 
 		h2, h3 {
 			color: #fff;
@@ -52,21 +52,100 @@
 	}
 
 	.swiper-container {
-		width: 80%;
-		padding-top: 50px;
-		padding-bottom: 50px;
+		margin: 10% 0;
+		height: 0;
+		padding: 20% 0;
+		position: relative;
+
+		.swiper-wrapper {
+			position: absolute;
+			left: 100px;
+			right: 100px;
+			top: 0;
+			bottom: 0;
+		}
 	}
 
 	.swiper-slide {
+		position: absolute;
 		background-color: #fff;
 		background-position: center;
 		background-size: cover;
-		width: 66.7%;
-		max-width: 950px;
-		height: 400px;
-		border-radius: 4px;
 		box-shadow: inset 0 0 1px;
 		text-align: center;
-		line-height: 400px;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+
+		&.animated {
+			animation-duration: 1.2s;
+			animation-delay: 0.4s;
+		}
+	}
+
+	.feij-advantage {
+		text-align: center;
+
+		.advantage-item {
+			display: inline-block;
+			margin: 0 20px;
+
+			dd, dl, dt {
+				margin: 0;
+				padding: 0;
+			}
+
+			dd {
+				margin-top: 10px;
+				color: #222;
+			}
+
+			.icon-contain {
+				background-color: rgba(255, 255, 255, 0.8);
+				border-radius: 50%;
+				display: inline-block;
+				width: 88px;
+				height: 88px;
+				text-align: center;
+				line-height: 88px;
+
+				.icon {
+					display: inline-block;
+					background-repeat: no-repeat;
+					background-size: 100%;
+					background-size: cover;
+					vertical-align: middle;
+				}
+
+				&.contain-speed-up {
+					.icon {
+						width: 60px;
+						height: 60px;
+						background-image: url("../../assets/images/home/speed-up.png");
+					}
+				}
+
+				&.contain-secure {
+					animation-delay: 0.5s;
+
+					.icon {
+						width: 50px;
+						height: 50px;
+						background-image: url("../../assets/images/home/secure.png");
+					}
+				}
+
+				&.contain-compatible {
+					animation-delay: 1s;
+
+					.icon {
+						width: 42px;
+						height: 50px;
+						background-image: url("../../assets/images/home/compatible.png");
+					}
+				}
+			}
+		}
 	}
 }

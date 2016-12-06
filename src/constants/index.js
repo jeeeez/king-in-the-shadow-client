@@ -1,7 +1,7 @@
 export default {
 	website: {
 		title: '非匠',
-		logo: require('assets/logo.png')
+		logo: require('assets/images/logo/logo.png')
 	},
 	/**
 	 * 当前登录用户信息，可由如下三个地方设置
@@ -17,6 +17,6 @@ export default {
 	showUserMenu: false,
 	// 管理员菜单显示标识
 	showAdminMenu: false,
-	defaultAvatar: require('assets/logo.png'),
+	defaultAvatar: require('assets/images/logo/logo.png'),
 	TOKEN_KEY: 'KING-TOKEN'
 };
