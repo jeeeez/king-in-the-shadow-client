@@ -3,7 +3,7 @@
 	<div class="mask" v-if="G.showUserMenu" v-on:click="G.showUserMenu=false"></div>
 
 	<!-- 用户头像 -->
-	<router-link class="user-box" to="home">
+	<router-link class="user-box" to="/home">
 		<img class="avatar" v-bind:src="G.account.avatar||G.defaultAvatar" />
 		<span class="email">{{G.account.email}}</span>
 	</router-link>

@@ -1,7 +1,5 @@
 @charset "UTF-8";
-
 @import "../../assets/styles/mixin";
-
 // .banner {
 // 	height: 450px;
 // 	text-align: center;
@@ -9,7 +7,6 @@
 // 	width: 100%;
 // 	margin-bottom: 3em;
 // 	display: table;
-
 // 	.banner-head {
 // 		display: table-cell;
 // 		vertical-align: middle;
@@ -27,13 +24,13 @@
 
 	.banner {
 		@include linearCarveUp(rgb(6, 150, 222), rgb(0, 184, 97));
-
 		padding: 40px 0;
 
-		h2, h3 {
+		h2,
+		h3 {
 			color: #fff;
 			text-align: center;
-			margin: 0px 0;
+			margin: 0;
 			font-weight: 300;
 		}
 
@@ -91,7 +88,9 @@
 			display: inline-block;
 			margin: 0 20px;
 
-			dd, dl, dt {
+			dd,
+			dl,
+			dt {
 				margin: 0;
 				padding: 0;
 			}
@@ -130,8 +129,8 @@
 					animation-delay: 0.5s;
 
 					.icon {
-						width: 50px;
-						height: 50px;
+						width: 48px;
+						height: 48px;
 						background-image: url("../../assets/images/home/secure.png");
 					}
 				}

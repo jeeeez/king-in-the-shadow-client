@@ -19,6 +19,7 @@
 
 	.pure-menu-link {
 		cursor: pointer;
+		line-height: 24px;
 	}
 
 	.oops-menu {
@@ -35,20 +36,18 @@
 			text-align: center;
 			position: absolute;
 			right: 0;
-			transition: all .3s ease;
+			transition: all 0.3s ease;
 
-			&.fade-enter, &.fade-leave-active {
+			&.fade-enter,
+			&.fade-leave-active {
 				opacity: 0;
-
 				// transform: rotate(90deg);
-		
 			}
 
-			&.fade-enter-active, &.fade-leave {
+			&.fade-enter-active,
+			&.fade-leave {
 				opacity: 0.8;
-
 				// transform: rotate(90deg);
-		
 			}
 		}
 	}
@@ -58,20 +57,20 @@
 	float: right;
 
 	.pure-menu-sub-item {
-		line-height: 24px;
+		// line-height: 24px;
 	}
 
 	.pure-menu-children {}
 
 	.pure-menu-allow-hover {
 		&:hover {
-			.pure-menu-link, .pure-menu-children {
+			.pure-menu-children,
+			.pure-menu-link {
 				background-color: #f9f9f9;
 			}
 		}
 	}
 }
-
 @media screen and (max-width: 768px) {
 	.head-menu {
 		.account-menu {
@@ -87,7 +86,8 @@
 				text-align: center;
 
 				&.pure-menu-allow-hover:hover {
-					.pure-menu-link, .pure-menu-children {
+					.pure-menu-children,
+					.pure-menu-link {
 						background-color: #fff;
 					}
 				}
@@ -124,7 +124,6 @@
 		}
 	}
 }
-
 @media screen and (max-width: 568px) {
 	.head-menu {
 		text-align: center;
