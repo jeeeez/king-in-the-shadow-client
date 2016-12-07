@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import "../../assets/styles/mixin";
-// .banner {
+@import "../../assets/styles/mixin"; // .banner {
 // 	height: 450px;
 // 	text-align: center;
 // 	background-size: cover;
@@ -24,7 +23,7 @@
 
 	.banner {
 		@include linearCarveUp(rgb(6, 150, 222), rgb(0, 184, 97));
-		padding: 40px 0;
+		padding: 100px 0;
 
 		h2,
 		h3 {
@@ -56,8 +55,8 @@
 
 		.swiper-wrapper {
 			position: absolute;
-			left: 100px;
-			right: 100px;
+			left: 10%;
+			right: 10%;
 			top: 0;
 			bottom: 0;
 		}
@@ -78,6 +77,13 @@
 		&.animated {
 			animation-duration: 1.2s;
 			animation-delay: 0.4s;
+		}
+
+		> p {
+			font-size: 2em;
+			text-shadow: 0 1px 1px #444;
+			color: white;
+			font-weight: 500;
 		}
 	}
 
