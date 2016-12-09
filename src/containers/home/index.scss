@@ -19,9 +19,12 @@
 // }
 
 #Home {
-	.container {}
+	.container {
+		max-width: 1024px;
+		margin: 0 auto;
+	}
 
-	.banner {
+	.section.banner {
 		@include linearCarveUp(rgb(6, 150, 222), rgb(0, 184, 97));
 		padding: 100px 0;
 
@@ -29,7 +32,7 @@
 		h3 {
 			color: #fff;
 			text-align: center;
-			margin: 0;
+			margin: 10px 0;
 			font-weight: 300;
 		}
 
@@ -48,31 +51,19 @@
 	}
 
 	.swiper-container {
-		margin: 10% 0;
-		height: 0;
-		padding: 20% 0;
-		position: relative;
+		margin: 60px auto;
+		width: 600px;
 
-		.swiper-wrapper {
-			position: absolute;
-			left: 10%;
-			right: 10%;
-			top: 0;
-			bottom: 0;
-		}
+		.swiper-wrapper {}
 	}
 
 	.swiper-slide {
-		position: absolute;
 		background-color: #fff;
 		background-position: center;
 		background-size: cover;
 		box-shadow: inset 0 0 1px;
 		text-align: center;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
+		height: 300px;
 
 		&.animated {
 			animation-duration: 1.2s;
@@ -149,6 +140,87 @@
 						height: 50px;
 						background-image: url("../../assets/images/home/compatible.png");
 					}
+				}
+			}
+		}
+	}
+
+	.downloads {
+		background-color: #f2f2f2;
+		padding: 20px 0 100px;
+		text-align: center;
+
+		h3 {
+			font-size: 3em;
+			text-align: center;
+		}
+
+		.download {
+			display: inline-block;
+			width: 350px;
+			margin: 0 15px;
+			background-color: #fff;
+			border-radius: 6px;
+			box-shadow: 2px 2px 8px #b9b9b9;
+			padding: 15px 30px 30px;
+			vertical-align: top;
+
+			h4 {
+				font-size: 1.5em;
+			}
+
+			.desc {
+				line-height: 1.5;
+				height: 150px;
+			}
+
+			.btn-download {
+				border: none;
+				border-radius: 20px;
+				height: 40px;
+				width: 160px;
+				background-color: rgb(6,150,222);
+				color: #fff;
+				box-shadow: 1px 1px 3px rgb(6,150,222);
+			}
+		}
+	}
+
+	.footer {
+		background-color: rgb(40,60,80);
+		padding: 10px 20px;
+
+		.logo {
+			width: 40px;
+			height: 40px;
+			vertical-align: middle;
+			margin-right: 15px;
+		}
+
+		.link {
+			color: #bbb;
+			font-size: 1.2em;
+			text-decoration: none;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+}
+@media screen and (max-width: 768px) {
+	#Home {
+		.downloads {
+			.download {
+				display: block;
+				margin-bottom: 15px;
+				width: initial;
+
+				.desc {
+					height: initial;
+					min-height: 80px;
+					font-size: 16px;
+					margin-bottom: 15px;
 				}
 			}
 		}

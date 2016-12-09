@@ -1,4 +1,4 @@
-<button class="pure-button">
+<button class="pure-button" v-bind:disabled="isLoading">
 	<i v-if="isLoading" class="fa fa-spinner"></i>
 	<slot>确定</slot>
 </button>

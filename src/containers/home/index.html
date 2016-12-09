@@ -11,49 +11,88 @@
 
 
 <section id="Home">
-	<head-nav-menu></head-nav-menu>
-	<section class="container banner">
-		<h2 class="animated bounceInDown">非匠</h2>
-		<h3 class="animated bounceInUp">从不让用户蛋疼</h3>
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<!-- Slides -->
-				<div class="swiper-slide animated bounceInDown">
-					<p>老实讲，虽然我们的首页已经很漂亮了</p>
-					<p>但，请不要被它所迷惑</p>
-					<p>因为，我们卖的是高品质的服务</p>
-					<p>我可以很自豪的讲，我们活真的很好。</p>
+	<head-nav-menu :class="headMenuClassName"></head-nav-menu>
+	<section class="section banner">
+		<section class="container">
+			<h2 class="animated bounceInDown">非匠</h2>
+			<h3 class="animated bounceInUp">从不让用户蛋疼</h3>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<!-- Slides -->
+					<div class="swiper-slide animated bounceInDown">
+						<!-- <p>老实讲，虽然我们的首页已经很漂亮了</p>
+						<p>但，请不要被它所迷惑</p>
+						<p>因为，我们卖的是高品质的服务</p>
+						<p>我可以很自豪的讲，我们活真的很好。</p> -->
+					</div>
+					<!-- <div class="swiper-slide animated bounceInLeft">Slide 2</div> -->
+					<!-- <div class="swiper-slide animated bounceInRight">Slide 3</div> -->
 				</div>
-				<!-- <div class="swiper-slide animated bounceInLeft">Slide 2</div> -->
-				<!-- <div class="swiper-slide animated bounceInRight">Slide 3</div> -->
 			</div>
-		</div>
 
-		<div class="feij-advantage">
-			<dl class="advantage-item">
-				<dt>
+			<div class="feij-advantage">
+				<dl class="advantage-item">
+					<dt>
 					<div class="icon-contain contain-speed-up animated rubberBand">
 						<span class="icon"></span>
 					</div>
 				</dt>
-				<dd>智能加速</dd>
-			</dl>
-			<dl class="advantage-item">
-				<dt>
+					<dd>智能加速</dd>
+				</dl>
+				<dl class="advantage-item">
+					<dt>
 					<div class="icon-contain contain-secure animated rubberBand">
 						<span class="icon"></span>
 					</div>
 				</dt>
-				<dd>数据加密 隐私保护</dd>
-			</dl>
-			<dl class="advantage-item">
-				<dt>
+					<dd>数据加密 隐私保护</dd>
+				</dl>
+				<dl class="advantage-item">
+					<dt>
 					<div class="icon-contain contain-compatible animated rubberBand">
 						<span class="icon"></span>
 					</div>
 				</dt>
-				<dd>完美兼容各种系统</dd>
-			</dl>
-		</div>
+					<dd>完美兼容各种系统</dd>
+				</dl>
+			</div>
+		</section>
 	</section>
+
+	<!-- 下载 -->
+	<section class="section downloads">
+		<section class="container">
+			<h3>坐稳了，要起飞了</h3>
+			<section class="wrap clearfix">
+				<!-- windows -->
+				<div class="download windows">
+					<h4>WINDOWS 客户端下载</h4>
+					<div class="desc">
+						少年，你能看到这里说明你有一颗渴望飞翔的心。但是行走江湖，需要一件趁手的兵刃。春秋战国时期儒家学派的孔夫子曾曰过“代理账号只有搭配软件才能发挥作用”。别慌，我们已经为你准备好了。。。
+					</div>
+					<div class="control">
+						<button class="btn btn-download">点击下载</button>
+					</div>
+				</div>
+				<!-- OSX -->
+				<div class="download osx">
+					<h4>MAC 客户端下载</h4>
+					<div class="desc">
+						少年，你要看的基本都在左边了。。。
+					</div>
+					<div class="control">
+						<button class="btn btn-download">点击下载</button>
+					</div>
+				</div>
+			</section>
+		</section>
+	</section>
+
+	<!-- footer -->
+	<footer class="footer">
+		<section class="container">
+			<img class="logo" :src="G.website.logo" />
+			<a class="link">www.pickerlee.com</a>
+		</section>
+	</footer>
 </section>

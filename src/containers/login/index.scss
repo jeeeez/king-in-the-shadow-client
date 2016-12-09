@@ -1,14 +1,15 @@
 @import "../../assets/styles/mixin";
 @import "../../assets/styles/variables";
 
-.login-container, .register-container {
+.login-container,
+.register-container {
 	@include linearGradient(#fcee6c, #fff);
-
 	height: 99vh;
 	border-top: 1px solid #fcee6c;
 	position: relative;
 
-	.login-box, .register-box {
+	.login-box,
+	.register-box {
 		width: 320px;
 		margin: 0 auto;
 		border-radius: 4px;
@@ -24,7 +25,6 @@
 
 		.box-head {
 			@include linearGradient(#242424, #000);
-
 			color: #fff;
 			text-align: center;
 			line-height: 44px;
@@ -77,10 +77,11 @@
 		}
 	}
 }
-
 @media only screen and (max-width: 350px) {
-	.login-container, .register-container {
-		.login-box, .register-box {
+	.login-container,
+	.register-container {
+		.login-box,
+		.register-box {
 			width: 280px;
 			margin-left: -140px;
 

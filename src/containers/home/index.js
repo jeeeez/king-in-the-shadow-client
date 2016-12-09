@@ -17,11 +17,12 @@ import G from 'constants';
 export default {
 	template,
 	data() {
-		const account = G.account || {};
-		return { account };
+		// const account = G.account || {};
+		return { G, headMenuClassName: '' };
 	},
 	created() {
-
-
+		document.addEventListener('scroll', e => {
+			this.headMenuClassName = document.body.scrollTop > 200 ? 'wheel' : '';
+		});
 	}
 };

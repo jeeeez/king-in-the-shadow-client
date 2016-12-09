@@ -1,10 +1,11 @@
 .custom-icon.icon-times {
-	&:before, &:after {
+	&:after,
+	&:before {
 		content: ' ';
 		display: block;
 		height: 141.42%;
 		width: 2px;
-		background-color: #565d64;
+		background-color: #fff;
 		position: absolute;
 		left: 50%;
 		top: -3px;

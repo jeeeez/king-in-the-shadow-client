@@ -1,7 +1,7 @@
 export default {
 	website: {
 		title: '非匠',
-		logo: require('assets/images/logo/logo.png')
+		logo: require('assets/images/logo/logo-white.png')
 	},
 	/**
 	 * 当前登录用户信息，可由如下三个地方设置
