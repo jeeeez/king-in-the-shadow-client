@@ -88,7 +88,7 @@
 		.pure-menu-children {
 			border-radius: 0 0 4px 4px;
 			overflow: hidden;
-			box-shadow: 1px 3px 4px #2788c5;
+			box-shadow: 1px 3px 4px rgba(255,255,255,0.08);
 			background-color: transparent;
 		}
 
@@ -96,14 +96,14 @@
 			&:hover {
 				.pure-menu-children,
 				.pure-menu-link {
-					background-color: #44a5f9;
+					background-color: rgba(204,204,204,0.08);
 				}
 			}
 		}
 
 		.account-menu-link {
 			&:hover {
-				background-color: rgba(204,204,204,0.08) !important;
+				background-color: rgba(255,255,255,0.08) !important;
 			}
 		}
 	}
@@ -171,9 +171,9 @@
 		}
 
 		&.show {
-			// background-color: rgba(255,255,255,0.2);
 			.account-menu {
 				height: initial;
+				background-color: rgba(255,255,255,0.08);
 			}
 		}
 	}
@@ -181,8 +181,6 @@
 @media screen and (max-width: 568px) {
 	.fixed-nav {
 		.head-menu {
-			text-align: center;
-
 			.main-menu {
 				height: 0;
 				overflow: hidden;
