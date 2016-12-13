@@ -35,7 +35,7 @@ export default {
 				StoreService.set(G.TOKEN_KEY, G.account.token);
 
 				// 页面跳转
-				router.push({ name: 'user.profile' });
+				router.push({ name: G.account.role === 'admin' ? 'admin.profile' : 'user.profile' });
 			}).catch(error => {
 				Dialog.alert(error.message);
 				this.isLogin = false;
