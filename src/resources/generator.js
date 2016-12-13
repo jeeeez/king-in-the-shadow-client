@@ -41,6 +41,9 @@ const successHandle = response => {
 	}
 };
 const errorHandle = response => {
+	if (response.status >= 400) {
+		throw new window.Error(response.statusText);
+	}
 	try {
 		return response.json().then(result => Promise.reject(result));
 	} catch (error) {
