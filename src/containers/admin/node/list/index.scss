@@ -5,8 +5,10 @@
 		float: right;
 		margin-top: -4.5px;
 
-		.btn-editor {
-			cursor: pointer;
+		.btn-editor,
+		.btn-init {
+			// margin: 0 5px !important;
+			padding: 0.2em !important;
 		}
 	}
 
