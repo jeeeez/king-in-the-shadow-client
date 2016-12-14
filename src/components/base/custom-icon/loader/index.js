@@ -1,6 +1,6 @@
 /**
  * loader 组件
- * @authors Picker Lee (https://github.com/li2274221)
+ * @authors Picker Lee (https://github.com/pickerlee)
  * @email   450994392@qq.com
  * @date    2016-10-24 11:34:15
  */

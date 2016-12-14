@@ -1,6 +1,6 @@
 /**
  * 顶部导航
- * @authors Picker Lee (https://github.com/li2274221)
+ * @authors Picker Lee (https://github.com/pickerlee)
  * @email   450994392@qq.com
  * @date    2016-09-19 09:43:59
  */

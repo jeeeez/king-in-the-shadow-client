@@ -1,6 +1,6 @@
 /**
  * 自定义图标
- * @authors Picker Lee (https://github.com/li2274221)
+ * @authors Picker Lee (https://github.com/pickerlee)
  * @email   450994392@qq.com
  * @date    2016-10-20 22:13:00
  */

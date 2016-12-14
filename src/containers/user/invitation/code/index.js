@@ -1,6 +1,6 @@
 /**
  * 今日邀请码列表
- * @authors Picker Lee (https://github.com/li2274221)
+ * @authors Picker Lee (https://github.com/pickerlee)
  * @email   450994392@qq.com
  * @date    2016-10-27 22:46:10
  */
