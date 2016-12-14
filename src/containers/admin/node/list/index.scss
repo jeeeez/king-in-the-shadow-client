@@ -5,8 +5,8 @@
 		float: right;
 		margin-top: -4.5px;
 
-		.btn-init {
-			padding: 0.1em 0.5em;
+		.btn-editor {
+			cursor: pointer;
 		}
 	}
 
@@ -28,7 +28,6 @@
 		}
 	}
 }
-
 @media only screen and (max-width: 520px) {
 	#nodes {
 		.pk-modal-container {

@@ -12,6 +12,7 @@ import Vue from 'vue';
 
 
 Vue.component('pk-button', {
-	props: ['text', 'isLoading'],
+	// isPureIcon标识该按钮为icon按钮（无文字，无背景色），
+	props: ['text', 'isLoading', 'isPureIcon'],
 	template
 });

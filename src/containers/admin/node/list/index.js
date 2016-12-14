@@ -86,7 +86,7 @@ export default {
 		 * 1、如果node为空则创建，如果不为空则修改
 		 */
 		update(node) {
-			this.activeNode = Object.assign(this.activeNode, node || {
+			this.activeNode = Object.assign({}, node || {
 				username: 'root',
 				port: 22,
 				privateKeyPath: '/root/.ssh/id_rsa',
