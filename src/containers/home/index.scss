@@ -1,262 +1,128 @@
 @charset "UTF-8";
-@import "../../assets/styles/mixin"; // .banner {
-// 	height: 450px;
-// 	text-align: center;
-// 	background-size: cover;
-// 	width: 100%;
-// 	margin-bottom: 3em;
-// 	display: table;
-// 	.banner-head {
-// 		display: table-cell;
-// 		vertical-align: middle;
-// 		margin-bottom: 0;
-// 		font-size: 2em;
-// 		color: white;
-// 		font-weight: 500;
-// 		text-shadow: 0 1px 1px black;
-// 		font-size: 3em;
-// 	}
-// }
 
 #Home {
-	.container {
-		max-width: 1024px;
-		margin: 0 auto;
+	h1 {
+		font-size: 4em;
 	}
 
-	.section.banner {
-		// @include linearCarveUp(rgb(6, 150, 222), rgb(0, 184, 97));
-		padding: 100px 0;
-		background-image: url('../../assets/images/home/bg-2.jpeg');
+	.section {
 		background-size: 100%;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: 60% 50%;
+	}
 
-		h2,
-		h3 {
+	.banner {
+		background-image: url('../../assets/images/home/bg-0.jpeg');
+		height: 100vh;
+
+		.container {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.desc,
+		h1 {
 			color: #fff;
 			text-align: center;
-			margin: 10px 0;
+			margin: 0 0 20px;
 			font-weight: 300;
 		}
 
-		h2 {
-			font-size: 3em;
+		.desc {
+			font-size: 1.2em;
+			margin-bottom: 20px;
 		}
 
-		h3 {
-			font-size: 2em;
-		}
-	}
-
-	.feij-advantage {
-		text-align: center;
-		margin-top: 200px;
-
-		.advantage-item {
-			display: inline-block;
-			margin: 0 30px;
-
-			dd,
-			dl,
-			dt {
-				margin: 0;
-				padding: 0;
-			}
-
-			dd {
-				margin-top: 10px;
-				color: #fff;
-			}
-
-			.icon-contain {
-				background-color: rgba(255, 255, 255, 0.8);
-				border-radius: 50%;
-				display: inline-block;
-				width: 130px;
-				height: 130px;
-				line-height: 130px;
-				text-align: center;
-				overflow: hidden;
-
-				.icon {
-					display: inline-block;
-					background-repeat: no-repeat;
-					background-size: 100%;
-					background-size: cover;
-					vertical-align: middle;
-				}
-
-				&.contain-speed-up {
-					.icon {
-						width: 100px;
-						height: 100px;
-						background-image: url("../../assets/images/home/speed-up.png");
-					}
-				}
-
-				&.contain-secure {
-					animation-delay: 0.5s;
-
-					.icon {
-						width: 76px;
-						height: 76px;
-						background-image: url("../../assets/images/home/secure.png");
-					}
-				}
-
-				&.contain-compatible {
-					animation-delay: 1s;
-
-					.icon {
-						width: 70px;
-						height: 82px;
-						background-image: url("../../assets/images/home/compatible.png");
-					}
-				}
-			}
-		}
-	}
-
-	.downloads {
-		background-color: #f2f2f2;
-		padding: 20px 0 100px;
-		text-align: center;
-
-		h3 {
-			font-size: 3em;
+		.controls {
 			text-align: center;
 		}
+	}
 
-		.download {
-			display: inline-block;
-			width: 350px;
-			margin: 0 15px;
-			background-color: #fff;
-			border-radius: 6px;
-			box-shadow: 2px 2px 8px #b9b9b9;
-			padding: 15px 30px 30px;
-			vertical-align: top;
+	.platform {
+		padding: 100px 100px 40px;
+		text-align: center;
+		border-bottom: 1px solid #e2e2e2;
 
-			h4 {
-				font-size: 1.5em;
+		.platform-item {
+			&.image-item {
+				> img {
+					width: 345px;
+					height: 240px;
+				}
 			}
 
-			.desc {
-				line-height: 1.5;
-				height: 150px;
-			}
+			&.desc-item {
+				text-align: left;
 
-			.btn-download {
-				border: none;
-				border-radius: 20px;
-				height: 40px;
-				width: 160px;
-				background-color: rgb(6,150,222);
-				color: #fff;
-				box-shadow: 1px 1px 3px rgb(6,150,222);
+				h2 {
+					margin: 0 0 15px;
+					font-size: 3em;
+					font-weight: 200;
+				}
+
+				> p {
+					font-size: 1.2em;
+					line-height: 1.4em;
+				}
 			}
 		}
 	}
 
-	.footer {
-		background-color: rgb(40,60,80);
-		padding: 5px 20px;
+	.btn,
+	.btn-download {
+		color: #fff;
+		font-size: 1.1em;
+		margin: 1em 0.2em;
+		display: inline-block;
+		padding: 13px 80px;
+		text-decoration: none;
+		transition: all 0.2s;
+		font-weight: 700;
+		background-color: #745cf9;
+		border: 3px solid #745cf9;
 
-		.logo {
-			width: 30px;
-			height: 30px;
-			vertical-align: middle;
-			margin-right: 15px;
+		&:hover {
+			background-color: #5d47d7;
+			border-color: #5d47d7;
 		}
 
-		.link {
-			color: #bbb;
-			font-size: 12px;
-			text-decoration: none;
-			float: right;
-			line-height: 30px;
+		&.btn-register {
+			border: 3px solid #fff;
+			background-color: transparent;
 
 			&:hover {
-				color: #fff;
+				background-color: rgba(255,255,255,0.8);
+				color: #444;
 			}
 		}
 	}
 }
 @media screen and (max-width: 768px) {
 	#Home {
-		.downloads {
-			h3 {
-				font-size: 2em;
-			}
+		h1 {
+			font-size: 3em;
+		}
 
-			.download {
-				display: block;
-				margin-bottom: 15px;
-				width: initial;
-
-				.desc {
-					height: initial;
-					min-height: 80px;
-					font-size: 16px;
-					margin-bottom: 15px;
+		.banner {
+			.controls {
+				.btn {
+					display: block;
+					margin: 30px auto;
+					width: 70%;
+					padding: 13px 0;
 				}
 			}
 		}
 
-		.feij-advantage {
-			margin-top: 100px;
-			width: 0;
-			height: 100px;
-			position: relative;
-			margin: 150px auto 0;
+		.platform {
+			padding: 20px;
 
-			.advantage-item {
-				display: block;
-				margin: 0;
-				position: absolute;
-
-				.icon-contain {
-					width: 80px;
-					height: 80px;
-					line-height: 80px;
-
-					&.contain-speed-up {
-						.icon {
-							width: 60px;
-							height: 60px;
-						}
-					}
-
-					&.contain-secure {
-						.icon {
-							width: 48px;
-							height: 48px;
-						}
-					}
-
-					&.contain-compatible {
-						.icon {
-							width: 43px;
-							height: 50px;
-						}
-					}
-				}
-
-				&:nth-child(1) {
-					top: -100px;
-					left: -40px;
-				}
-
-				&:nth-child(2) {
-					top: 40px;
-					left: -150px;
-				}
-
-				&:nth-child(3) {
-					top: 40px;
-					right: -150px;
+			.platform-item.image-item {
+				> img {
+					width: 100%;
+					height: auto;
 				}
 			}
 		}
