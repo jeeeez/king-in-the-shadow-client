@@ -32,7 +32,7 @@
 
 		.desc {
 			font-size: 1.2em;
-			margin-bottom: 20px;
+			margin-bottom: 30px;
 		}
 
 		.controls {
@@ -76,7 +76,7 @@
 		font-size: 1.1em;
 		margin: 1em 0.2em;
 		display: inline-block;
-		padding: 13px 80px;
+		padding: 13px 70px;
 		text-decoration: none;
 		transition: all 0.2s;
 		font-weight: 700;
@@ -97,6 +97,12 @@
 				color: #444;
 			}
 		}
+
+		> .fa {
+			font-size: 1.8em;
+			margin: 0 5px;
+			vertical-align: middle;
+		}
 	}
 }
 @media screen and (max-width: 768px) {
@@ -112,6 +118,7 @@
 					margin: 30px auto;
 					width: 70%;
 					padding: 13px 0;
+					max-width: 280px;
 				}
 			}
 		}
