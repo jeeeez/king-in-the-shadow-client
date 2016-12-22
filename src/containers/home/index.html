@@ -1,12 +1,13 @@
 <section id="Home">
 	<section class="section banner">
+		<img class="logo" :src="G.website.logo" />
 		<section class="container">
 			<h1 class="animated bounceInDown">世界那么大，给你留扇窗</h1>
 			<p class="animated bounceInUp desc">蛋说他再想想</p>
 
 			<div class="controls" v-if="!G.account.email">
-				<router-link to="register" class="btn btn-register">注 册</router-link>
-				<router-link to="login" class="btn btn-login">登 录</router-link>
+				<router-link to="register" class="btn btn-register animated bounceInLeft">注 册</router-link>
+				<router-link to="login" class="btn btn-login animated bounceInRight">登 录</router-link>
 			</div>
 			<div class="controls" v-if="G.account.email">
 				<router-link to="user/profile" class="btn btn-dashboard">
