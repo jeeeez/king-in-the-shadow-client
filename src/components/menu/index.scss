@@ -1,12 +1,10 @@
 @charset "UTF-8";
-
 /**
  * 菜单通用样式
  * @authors Picker Lee (https://github.com/li2274221)
  * @emial   450994392@qq.com
  * @date    2016-09-27 16:24:05
  */
-
 @import "../../assets/styles/variables";
 
 .sidebar-menu {
@@ -17,7 +15,6 @@
 	bottom: 0;
 	background-color: #252a3a;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
 	// 用户头像、邮箱
 	.user-box {
 		text-align: center;
@@ -38,7 +35,7 @@
 
 	.main-menu {
 		overflow: hidden;
-		transition: all .5s;
+		transition: all 0.5s;
 
 		> h4 {
 			margin: 10px 15px;
@@ -54,7 +51,9 @@
 			color: #fff;
 			cursor: pointer;
 
-			&:hover, &:focus, &.router-link-active {
+			&.router-link-active,
+			&:focus,
+			&:hover {
 				background-color: #373c5a;
 			}
 		}
@@ -88,13 +87,15 @@
 		.custom-icon.icon-bars {
 			background-color: #fff;
 
-			&:before, &:after {
+			&:after,
+			&:before {
 				background-color: #fff;
 			}
 		}
 
 		.custom-icon.icon-times {
-			&:before, &:after {
+			&:after,
+			&:before {
 				background-color: #fff;
 			}
 		}
@@ -109,6 +110,7 @@
 		line-height: 40px;
 		text-align: center;
 		cursor: pointer;
+		display: block;
 
 		&:hover {
 			.fa {
@@ -124,7 +126,6 @@
 		}
 	}
 }
-
 @media screen and (max-width: 768px) {
 	.sidebar-menu {
 		width: 100%;
@@ -189,5 +190,4 @@
 		}
 	}
 }
-
 @media screen and (max-width: 568px) {}
