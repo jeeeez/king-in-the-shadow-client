@@ -41,21 +41,21 @@ export default {
 				return this.errorMessage = '密码不能为空！';
 			if (this.password.length < 6)
 				return this.errorMessage = '密码长度不能小于六位！';
-			if (Validation.empty(this.invitationCode))
-				return this.errorMessage = '邀请码不能为空';
-			if (!Validation.invitationCode(this.invitationCode))
-				return this.errorMessage = '邀请码为8位数字+字母组合';
+			// if (Validation.empty(this.invitationCode))
+			// 	return this.errorMessage = '邀请码不能为空';
+			// if (!Validation.invitationCode(this.invitationCode))
+			// 	return this.errorMessage = '邀请码为8位数字+字母组合';
 
 			this.errorMessage = '';
 			this.isRegister = true;
 			Resources.account.register.save({
 				email: this.email,
-				password: this.password,
-				invitationCode: this.invitationCode
+				password: this.password // ,
+					// invitationCode: this.invitationCode
 			}).then(response => {
 				G.account = response.result;
 				this.isRegister = false;
-				router.push('user.profile');
+				router.push('user/profile');
 			}).catch(error => {
 				Dialog.alert(error.message);
 				this.isRegister = false;
