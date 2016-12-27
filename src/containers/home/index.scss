@@ -10,12 +10,18 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: 60% 50%;
+		height: 100vh;
+		position: relative;
+
+		.container {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
 	}
 
 	.banner {
 		background-image: url('../../assets/images/home/bg-0.jpeg');
-		height: 100vh;
-		position: relative;
 
 		.logo {
 			position: absolute;
@@ -23,12 +29,6 @@
 			top: 30px;
 			left: 30px;
 			transform: rotateZ(70deg);
-		}
-
-		.container {
-			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
 		}
 
 		.desc,
@@ -46,6 +46,19 @@
 
 		.controls {
 			text-align: center;
+		}
+	}
+
+	.slogen {
+		background-image: url('http://ossweb-img.qq.com/images/lol/web201310/skin/big64004.jpg');
+
+		.fj-slogen {
+			color: rgba(255,255,255,0.85);
+			text-align: center;
+			margin: 0 20px;
+			font-weight: 200;
+			font-size: 3em;
+			line-height: 2em;
 		}
 	}
 
@@ -129,6 +142,16 @@
 					padding: 13px 0;
 					max-width: 280px;
 				}
+			}
+		}
+
+		.slogen {
+			background-position: 78% 0;
+
+			.fj-slogen {
+				font-weight: 200;
+				font-size: 2em;
+				line-height: 1.5em;
 			}
 		}
 
