@@ -16,15 +16,12 @@ import AccountService from 'services/stores/account';
 import Dialog from 'services/dialog';
 // import G from 'constants';
 
-new Vue({
-	router,
-	template: '<router-view></router-view>'
-}).$mount('app');
+new Vue({router, template: '<router-view></router-view>'}).$mount('app');
 
 // 获取当前用户信息
 AccountService.get().catch(error => Dialog.alert(error.message));
 
 // 屏蔽选择 => user-select:none;
-document.body.onselectstart = document.body.ondrag = () => {
-	return false;
-};
+// document.body.onselectstart = document.body.ondrag = () => {
+// 	return false;
+// };

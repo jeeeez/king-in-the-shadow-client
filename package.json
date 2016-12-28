@@ -18,12 +18,12 @@
     "babel-runtime": "^6.0.0",
     "date-formatter": "git+https://github.com/li2274221/date-formatter.git",
     "font-awesome": "^4.6.3",
+    "normalize.css": "^5.0.0",
     "purecss": "^0.6.0",
     "swiper": "^3.4.0",
     "vue": "^2.0.3",
     "vue-resource": "^1.0.3",
-    "vue-router": "^2.0.1",
-    "weui": "^1.0.1"
+    "vue-router": "^2.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

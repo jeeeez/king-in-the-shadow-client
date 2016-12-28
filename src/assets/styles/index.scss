@@ -1,9 +1,8 @@
-@import "../../../node_modules/purecss/build/pure-min.css";
-// @import "../../../node_modules/purecss/build/forms.css";
-@import "../../../node_modules/purecss/build/grids-responsive.css";
-// @import "../../../node_modules/purecss/build/pure-nr.css";
+@import "../../../node_modules/purecss/build/pure-min.css"; // @import "../../../node_modules/purecss/build/forms.css";
+@import "../../../node_modules/purecss/build/grids-responsive.css"; // @import "../../../node_modules/purecss/build/pure-nr.css";
 @import "../../../node_modules/font-awesome/css/font-awesome.min.css";
 @import "../../../node_modules/animate.css/animate.css";
+@import "../../../node_modules/normalize.css";
 @import "./pure-rewrite";
 @import "./mixin";
 @import "./variables";
@@ -21,6 +20,14 @@ html {
 	-webkit-user-select: none;
 	font-size: 14px;
 	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+li,
+ul {
+	text-decoration: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .text-right {
