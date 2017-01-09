@@ -41,14 +41,15 @@ const successHandle = response => {
 	}
 };
 const errorHandle = response => {
-	if (response.status >= 400) {
-		throw new window.Error(response.statusText);
-	}
-	try {
-		return response.json().then(result => Promise.reject(result));
-	} catch (error) {
-		throw new window.Error(response.statusText);
-	}
+	return response.json().then(result => {
+		return Promise.reject(result);
+	}).catch(error => {
+		if (error.status === 'ERROR') {
+			throw error;
+		} else {
+			throw new window.Error(response.body || response.statusText);
+		}
+	});
 };
 
 

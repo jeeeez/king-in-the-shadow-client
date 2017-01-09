@@ -44,5 +44,13 @@ export default {
 				this.isFetching = false;
 			});
 		}
+	},
+
+	computed: {
+		newAmount() {
+			return this.users.filter(user => {
+				return user.createDate > new Date(new Date().toLocaleDateString()).getTime();
+			}).length;
+		}
 	}
 };
