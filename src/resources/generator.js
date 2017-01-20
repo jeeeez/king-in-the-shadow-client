@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';
 
 import G from 'constants';
+import router from 'services/router';
 import StoreService from 'services/store';
 
 Vue.use(VueResource);
@@ -41,6 +42,10 @@ const successHandle = response => {
 	}
 };
 const errorHandle = response => {
+	if (response.status === 401) {
+		router.push({ name: 'login' });
+		throw new Error('请登录！');
+	}
 	return response.json().then(result => {
 		return Promise.reject(result);
 	}).catch(error => {

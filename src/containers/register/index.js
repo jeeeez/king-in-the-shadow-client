@@ -11,11 +11,12 @@ import 'components/base/tips';
 import 'components/base/button';
 import 'components/base/head-menu';
 
-import G from 'constants';
+// import G from 'constants';
 import Resources from 'resources';
 import Validation from 'services/validation';
 import Dialog from 'services/dialog';
 import router from 'services/router';
+// import StoreService from 'services/store';
 
 export default {
 	template,
@@ -53,9 +54,15 @@ export default {
 				password: this.password // ,
 					// invitationCode: this.invitationCode
 			}).then(response => {
-				G.account = response.result;
 				this.isRegister = false;
-				router.push('user/profile');
+				// G.account = response.result;
+				// StoreService.set(G.TOKEN_KEY, G.account.token);
+				// router.push('user/profile');
+
+				// 用户注册完之后需要邮箱验证才能登录
+				Dialog.alert(`我们已发送一封邮箱验证邮件至${this.email}，请及时确认以开通非匠账户！`, () => {
+					router.push('login');
+				});
 			}).catch(error => {
 				Dialog.alert(error.message);
 				this.isRegister = false;
