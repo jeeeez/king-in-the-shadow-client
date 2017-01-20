@@ -25,13 +25,16 @@ const routes = [
 	{ name: 'contact', path: '/contact', component: Vue.extend(Contact) },
 	{ name: 'declaration', path: '/declaration', component: Vue.extend(Declaration) },
 	{ name: 'register', path: '/register', component: Vue.extend(Register) },
-	{ name: 'login', path: '/login', component: Vue.extend(Login) }, {
+	{ name: 'login', path: '/login', component: Vue.extend(Login) },
+	{
 		path: '/user',
 		component: Vue.extend(UserContainer),
 		children: [
 			{ name: 'user.profile', path: 'profile', component: Vue.extend(User.Profile), beforeEnter: accoutAuth.beforeUserRouteEnter },
 			{ name: 'user.nodes', path: 'nodes', component: Vue.extend(User.Nodes), beforeEnter: accoutAuth.beforeUserRouteEnter },
-			{ name: 'user.invitationCodes', path: 'invitation/codes', component: User.InvitationCodes, beforeEnter: accoutAuth.beforeUserRouteEnter }
+			{ name: 'user.invitationCodes', path: 'invitation/codes', component: User.InvitationCodes, beforeEnter: accoutAuth.beforeUserRouteEnter },
+			{ name: 'user.resetAccountPassword', path: 'reset-account-password', component: User.ResetAccountPassword, beforeEnter: accoutAuth.beforeUserRouteEnter },
+			{ name: 'user.resetVPNPassword', path: 'reset-vpn-password', component: User.ResetVPNPassword, beforeEnter: accoutAuth.beforeUserRouteEnter }
 		]
 	}, {
 		path: '/admin',

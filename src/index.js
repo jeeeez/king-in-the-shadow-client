@@ -24,6 +24,6 @@ AccountService.get().catch(error => {
 });
 
 // 屏蔽选择 => user-select:none;
-document.body.onselectstart = document.body.ondrag = () => {
-	return false;
-};
+// document.body.onselectstart = document.body.ondrag = () => {
+// return false;
+// };
