@@ -1,0 +1,34 @@
+<section id="ResetAccountPassword">
+	<content-header>修改登录密码</content-header>
+
+	<section class="panel-list">
+		<section class="panel-item">
+			<p>要记好多的密码啊，万一忘记了怎么办---</p>
+			<p>请放心，您的密码在我们系统很安全，我们已经为您系好安全了呢</p>
+		</section>
+	</section>
+
+
+	<section class="form-wrap">
+		<form class="pure-form pure-form-stacked">
+			<tips v-if="formData.errorMessage" type="error" v-bind:message="formData.errorMessage"></tips>
+			<fieldset class="pure-group">
+				<div class="pure-control-group">
+					<label>新登录密码</label>
+					<input type="password" placeholder="请输入新的登录密码" v-model="formData.password" />
+				</div>
+				<div class="pure-control-group">
+					<label>确认新密码</label>
+					<input type="password" placeholder="请再次输入新的登录密码" v-model="formData.confirmPSW" />
+				</div>
+				<div class="pure-control-group">
+					<label>原登录密码</label>
+					<input type="password" placeholder="请输入您的原登录密码" v-model="formData.accountPSW" />
+				</div>
+				<div class="controls">
+					<pk-button class="button-success" :is-loading="formData.isSaveing" v-on:click.native="save($event)">保存</pk-button>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+</section>
