@@ -7,10 +7,6 @@
 import './index.scss';
 import template from './index.html';
 
-import 'components/base/tips';
-import 'components/base/button';
-import 'components/base/head-menu';
-
 // import G from 'constants';
 import Resources from 'resources';
 import Validation from 'services/validation';
@@ -52,7 +48,7 @@ export default {
 			Resources.account.register.save({
 				email: this.email,
 				password: this.password // ,
-					// invitationCode: this.invitationCode
+				// invitationCode: this.invitationCode
 			}).then(response => {
 				this.isRegister = false;
 				// G.account = response.result;

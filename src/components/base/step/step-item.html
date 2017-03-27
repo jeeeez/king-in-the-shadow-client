@@ -1,0 +1,11 @@
+<div class="pk-step-item" :class="{
+					'pk-step-item-wait':this.stepStatus==='wait',
+					'pk-step-item-process':this.stepStatus==='process',
+					'pk-step-item-finish':this.stepStatus==='finish',
+					'pk-step-item-first':this.index===0,
+					'pk-step-item-last':this.isLast,
+				}">
+	<div class="pk-step-item-title">
+		{{title}}
+	</div>
+</div>

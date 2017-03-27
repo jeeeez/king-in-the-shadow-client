@@ -1,0 +1,134 @@
+.pk-step {
+	width: 100%;
+	display: flex;
+	overflow: hidden;
+	position: relative;
+
+	.pk-step-item {
+		width: auto;
+		flex: 1;
+		position: relative;
+		text-align: center;
+		vertical-align: top;
+	}
+
+	&.pk-step-arrow {
+		.pk-step-item {
+			height: 32px;
+			line-height: 32px;
+			margin-left: 16px;
+			margin-right: 4px;
+			cursor: pointer;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: -16px;
+				top: 0;
+				z-index: 1;
+				border-left-color: transparent;
+				border: 16px solid transparent;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				right: -16px;
+				top: 0;
+				z-index: 1;
+				border-top: 16px solid transparent;
+				border-bottom: 16px solid transparent;
+				border-left: 16px solid transparent;
+			}
+
+			&.pk-step-item-first {
+				margin-left: 0;
+
+				&:before {
+					border: 16px solid transparent;
+				}
+			}
+
+			&.pk-step-item-last {
+				margin-right: 0;
+
+				&:after {
+					border: 16px solid transparent;
+				}
+			}
+
+			&.pk-step-item-wait {
+				background-color: #EBEBEB;
+
+				&:before {
+					border: 16px solid #EBEBEB;
+					border-left-color: transparent;
+				}
+
+				&:after {
+					border-left-color: #EBEBEB;
+				}
+
+				.pk-step-item-title {
+					color: #333;
+				}
+			}
+
+			&.pk-step-item-process {
+				background-color: #3089DC;
+
+				&:before {
+					border: 16px solid #3089DC;
+					border-left-color: transparent;
+				}
+
+				&:after {
+					border-left-color: #3089DC;
+				}
+
+				.pk-step-item-title {
+					color: #fff;
+				}
+			}
+
+			&.pk-step-item-finish {
+				background-color: #E4F0FD;
+
+				&:before {
+					border: 16px solid #E4F0FD;
+					border-left-color: transparent;
+				}
+
+				&:after {
+					border-left-color: #E4F0FD;
+				}
+
+				.pk-step-item-title {
+					color: #666;
+				}
+			}
+
+			&[disabled] {
+				cursor: not-allowed;
+				background-color: #f2f2f2;
+
+				&:before {
+					border: 16px solid #F2F2F2;
+					border-left-color: transparent;
+				}
+
+				&:after {
+					border-left-color: #F2F2F2;
+				}
+
+				.pk-step-item-title {
+					color: #C7C7C7;
+				}
+			}
+
+			.pk-step-item-title {
+				font-size: 14px;
+			}
+		}
+	}
+}

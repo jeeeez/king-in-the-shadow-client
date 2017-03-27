@@ -6,9 +6,6 @@
  */
 
 import './index.scss';
-import 'components/content-header';
-
-import 'components/base/modal';
 
 import template from './index.html';
 

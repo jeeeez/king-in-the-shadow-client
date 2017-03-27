@@ -1,0 +1,45 @@
+#orderEditor {
+	.plan-list {
+		margin-top: 50px;
+	}
+
+	.plan-item {
+		border: 1px solid #ddd;
+		padding: 0 15px 20px;
+		border-radius: 4px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+
+		&.active,
+		&:hover {
+			background-color: rgba(48, 137, 220, 0.08);
+		}
+
+		&.active:after {
+			top: 0;
+			right: 0;
+			width: 0;
+			height: 0;
+			color: #fff;
+			content: '';
+			position: absolute;
+			border-top: 20px solid #3089DC;
+			border-right: 20px solid #3089DC;
+			border-bottom: 20px solid transparent;
+			border-left: 20px solid transparent;
+		}
+	}
+
+	.controls {
+		text-align: right;
+		margin-top: 30px;
+		display: flex;
+
+		.pure-button {
+			width: auto;
+			flex: 1;
+			margin: 0 10px;
+		}
+	}
+}

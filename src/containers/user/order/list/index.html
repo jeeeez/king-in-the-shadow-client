@@ -1,0 +1,68 @@
+<section id="orders">
+	<content-header>我的订单</content-header>
+	<section class="panel-list">
+		<div class="panel-item panel-attention">
+			<p>以下为当前账户所有订单列表</p>
+			<div class="oops">
+				<!-- 创建按钮 -->
+				<router-link :to="{name:'user.orderEditor',params:{No:''}}" class="">创建新订单</router-link>
+			</div>
+		</div>
+		<div class="panel-item">
+			<div class="pure-g order-statistic">
+				<div class="pure-u-1-2 pure-u-md-1-4">
+					总数：{{totalOrderCount}}
+				</div>
+				<div class="pure-u-1-2 pure-u-md-1-4">
+					已付款：{{paiedOrderCount}}
+				</div>
+				<div class="pure-u-1-2 pure-u-md-1-4">
+					未付款：{{unpaiedOrderCount}}
+				</div>
+				<div class="pure-u-1-2 pure-u-md-1-4">
+					已过期：{{outOfDateOrderCount}}
+				</div>
+			</div>
+		</div>
+		<ul class="panel-item order-list">
+			<!-- loading -->
+			<li v-if="isFetching">
+				<loader></loader>
+			</li>
+
+			<li v-if="!isFetching" class="order-item" v-for="order in orders" :order="order">
+				<div class="pure-g">
+					<div class="pure-u-1 pure-u-md-1-2">
+						<span>订单名称：</span>
+						<span>{{order.name}}</span>
+					</div>
+					<div class="pure-u-1 pure-u-md-1-2">
+						<span>创建时间：</span>
+						<span>{{order.createDate | formatDate('yyyy-MM-dd hh:mm')}}</span>
+					</div>
+				</div>
+				<div class="pure-g">
+					<div class="pure-u-1 pure-u-md-1-2">
+						<span>订单编号：</span>
+						<span>{{order.No}}</span>
+					</div>
+					<div class="pure-u-1 pure-u-md-1-2">
+						<span class>订单状态：</span>
+						<span class="status" v-bind:class="{'text-success':order.state===1,'text-error':order.state===0}">{{{0:'未付款',1:'已付款',2:'过期',100:'已删除'}[order.state]}}</span>
+						<router-link v-if="order.state===0" :to="{name:'user.orderEditor',params:{No:order.No}}" class="">去付款</router-link>
+					</div>
+				</div>
+				<div class="pure-g">
+					<div class="pure-u-1 pure-u-md-1-2">
+						<span>订单套餐：</span>
+						<span :title="order.plan.name+'\n价格：¥'+order.plan.price+'\n'+order.plan.description">{{order.plan.name}}</span>
+					</div>
+					<div class="pure-u-1 pure-u-md-1-2">
+						<span>实付金额：</span>
+						<span>¥</span><span>{{order.amount | currency}}</span>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+</section>

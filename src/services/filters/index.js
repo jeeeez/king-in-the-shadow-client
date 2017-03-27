@@ -8,5 +8,8 @@
 import Vue from 'vue';
 
 import date from './date';
+import number from './number';
 
 Vue.filter('formatDate', date.format);
+Vue.filter('number', number.number);
+Vue.filter('currency', number.currency);

@@ -1,10 +1,6 @@
 import './index.scss';
 import template from './index.html';
 
-import 'components/base/tips';
-import 'components/base/button';
-import 'components/base/head-menu';
-
 import G from 'constants';
 import Resources from 'resources';
 import Validation from 'services/validation';

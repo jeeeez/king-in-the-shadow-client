@@ -11,7 +11,6 @@
 import './index.scss';
 import template from './index.html';
 
-import 'components/base/head-menu';
 import G from 'constants';
 
 export default {

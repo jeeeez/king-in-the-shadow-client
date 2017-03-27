@@ -6,7 +6,6 @@
  */
 
 import './index.scss';
-import 'components/content-header';
 
 import template from './index.html';
 

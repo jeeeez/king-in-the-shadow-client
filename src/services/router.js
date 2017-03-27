@@ -34,7 +34,9 @@ const routes = [
 			{ name: 'user.nodes', path: 'nodes', component: Vue.extend(User.Nodes), beforeEnter: accoutAuth.beforeUserRouteEnter },
 			{ name: 'user.invitationCodes', path: 'invitation/codes', component: User.InvitationCodes, beforeEnter: accoutAuth.beforeUserRouteEnter },
 			{ name: 'user.resetAccountPassword', path: 'reset-account-password', component: User.ResetAccountPassword, beforeEnter: accoutAuth.beforeUserRouteEnter },
-			{ name: 'user.resetVPNPassword', path: 'reset-vpn-password', component: User.ResetVPNPassword, beforeEnter: accoutAuth.beforeUserRouteEnter }
+			{ name: 'user.resetVPNPassword', path: 'reset-vpn-password', component: User.ResetVPNPassword, beforeEnter: accoutAuth.beforeUserRouteEnter },
+			{ name: 'user.orders', path: 'orders', component: User.Orders, beforeEnter: accoutAuth.beforeUserRouteEnter },
+			{ name: 'user.orderEditor', path: 'order/:No(\\S*)', component: User.OrderEditor, beforeEnter: accoutAuth.beforeUserRouteEnter }
 		]
 	}, {
 		path: '/admin',

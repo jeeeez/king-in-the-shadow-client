@@ -6,11 +6,6 @@
  */
 
 import './index.scss';
-import 'components/content-header';
-
-import 'components/base/modal';
-import 'components/base/tips';
-import 'components/base/button';
 
 import template from './index.html';
 

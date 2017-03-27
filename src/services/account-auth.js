@@ -11,6 +11,7 @@ import router from 'services/router';
 import AccountService from 'services/stores/account';
 
 const ROLE = {
+	SUPERADMIN: 'SUPERADMIN',
 	ADMIN: 'admin',
 	USER: 'user'
 };
@@ -31,31 +32,31 @@ const adminAccountAuth = () => G.account && G.account.role === ROLE.ADMIN;
 export default {
 	// 普通用户页面验证
 	beforeUserRouteEnter(to, from, next) {
-			if (accoutAuth()) return next();
+		if (accoutAuth()) return next();
 
-			AccountService.get().then(account => {
-				if (account && account.id) {
-					next();
-				} else {
-					router.replace('login');
-				}
-			}).catch(error => Dialog.alert(error.message));
-		},
+		AccountService.get().then(account => {
+			if (account && account.id) {
+				next();
+			} else {
+				router.replace('login');
+			}
+		}).catch(error => Dialog.alert(error.message));
+	},
 
-		// 管理员页面验证
-		beforeAdminRouteEnter(to, from, next) {
-			if (adminAccountAuth()) return next();
+	// 管理员页面验证
+	beforeAdminRouteEnter(to, from, next) {
+		if (adminAccountAuth()) return next();
 
-			AccountService.get().then(account => {
-				if (!account || !account.id) {
-					return router.replace('login');
-				}
-				if (account.role === ROLE.USER) {
-					return router.replace('user.profile');
-				}
-				if (account.role === ROLE.ADMIN) {
-					next();
-				}
-			}).catch(error => Dialog.alert(error.message));
-		}
+		AccountService.get().then(account => {
+			if (!account || !account.id) {
+				return router.replace('login');
+			}
+			if (account.role === ROLE.USER) {
+				return router.replace('user.profile');
+			}
+			if (account.role === ROLE.ADMIN || account.role === ROLE.SUPERADMIN) {
+				next();
+			}
+		}).catch(error => Dialog.alert(error.message));
+	}
 };

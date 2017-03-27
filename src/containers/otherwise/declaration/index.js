@@ -10,7 +10,6 @@ import './index.scss';
 import template from './index.html';
 
 import G from 'constants';
-import 'components/base/head-menu';
 
 export default {
 	template,

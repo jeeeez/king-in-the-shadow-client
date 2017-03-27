@@ -10,6 +10,8 @@ import 'assets/styles/index.scss';
 import Vue from 'vue';
 import router from 'services/router';
 
+import 'components';
+
 import 'services/filters';
 
 import AccountService from 'services/stores/account';

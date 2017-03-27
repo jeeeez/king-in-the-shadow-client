@@ -17,7 +17,7 @@ html {
 	font-family: $fontFamily;
 	color: #333;
 	// user-select: none;
-	-webkit-user-select: none;
+	// -webkit-user-select: none;
 	font-size: 14px;
 	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
@@ -36,4 +36,12 @@ ul {
 
 a[title='站长统计'] {
 	display: none;
+}
+
+.text-success {
+	color: green;
+}
+
+.text-error {
+	color: gray;
 }

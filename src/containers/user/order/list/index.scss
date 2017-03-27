@@ -1,0 +1,32 @@
+#orders {
+	.order-statistic {
+		[class*="pure-u"] {
+			margin-bottom: 5px;
+		}
+	}
+
+	.order-list {
+		position: relative;
+
+		.loader {
+			position: absolute;
+			z-index: 10;
+			top: 100px;
+			left: 50%;
+			margin-left: -10px;
+		}
+	}
+
+	.order-item {
+		padding: 20px 0;
+		border-bottom: 1px dashed #ddd;
+
+		&:last-child {
+			border: none;
+		}
+
+		.pure-u-1 {
+			margin-bottom: 6px;
+		}
+	}
+}
