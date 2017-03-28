@@ -7,7 +7,8 @@
 import ResourceGenerator from 'resources/generator';
 
 const orders = ResourceGenerator('/api/orders');
-const userOrders = ResourceGenerator('/api/user/{userID}/orders');
-const order = ResourceGenerator('/api/order/{No}');
+const userOrders = ResourceGenerator('/api/users/{userID}/orders');
+const order = ResourceGenerator('/api/orders/{No}');
+const payment = ResourceGenerator('api/orders/{No}/payment');
 
-export default { orders, userOrders, order };
+export default { orders, userOrders, order, payment };

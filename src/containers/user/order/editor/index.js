@@ -12,6 +12,8 @@ export default {
 	data() {
 		return {
 			isFetching: false,
+			isCreatingOrder: false,
+			isCreatingPayURL: false,
 			stepIndex: 0,
 			plans: undefined, // 套餐列表
 			order: {}
@@ -53,10 +55,11 @@ export default {
 
 	methods: {
 		fetchOrderInfo() {
-			if (!this.No) {
+			const No = this.$route.params.No;
+			if (!No) {
 				return Promise.resolve(this.order);
 			}
-			return Resources.order.order.get({ No: this.No }).then(data => {
+			return Resources.order.order.get({ No }).then(data => {
 				this.order = data.result;
 			});
 		},
@@ -84,8 +87,40 @@ export default {
 		},
 
 		generateOrder() {
-			console.log('生成订单');
-			this.stepIndex += 1;
+			const No = this.$route.params.No;
+
+			if (No) {
+				return this.jumpToPay().then(() => {
+					this.stepIndex += 1;
+				}).catch(error => {
+					Dialog.alert(error.message);
+				});
+			}
+
+			const plan = this.plans.find(item => item.id === this.order.planID);
+
+			this.isCreatingOrder = true;
+			Resources.order.orders.save({
+				name: `${new Date().format('yyyy-MM-dd hh:mm')} ${plan.name} 订单`,
+				planID: this.order.planID
+			}).then(data => {
+				this.isCreatingOrder = false;
+				this.order = data.result;
+				return this.jumpToPay();
+			}).catch(error => {
+				this.isCreatingOrder = false;
+				Dialog.alert(error.message);
+			});
+		},
+
+		jumpToPay() {
+			this.isCreatingPayURL = true;
+			return Resources.order.payment.save({ No: this.order.No }, {}).then(data => {
+				window.open(data.result);
+			}).catch(error => {
+				this.isCreatingPayURL = false;
+				throw error;
+			});
 		}
 	},
 

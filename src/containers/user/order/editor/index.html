@@ -2,7 +2,7 @@
 	<content-header>{{$route.params.No?'订单信息':'创建订单'}}</content-header>
 	<div class="panel-list">
 		<div class="panel-item">
-			嗯哼
+			嗯哼，订单一旦创建就不能修改了哟。老铁
 		</div>
 		<div class="panel-item">
 			<div class="editor-step">
@@ -44,6 +44,9 @@
 
 			<!-- 生成订单 -->
 			<template v-if="stepIndex===1">
+				<div class="">
+					订单没问题就点下一步好了
+				</div>
 				<footer class="controls">
 					<pk-button class="next-step pure-button-primary" @click.native="stepIndex-=1">上一步</pk-button>
 					<pk-button class="next-step pure-button-primary" @click.native="generateOrder()">下一步</pk-button>
