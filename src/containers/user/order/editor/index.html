@@ -55,6 +55,9 @@
 
 			<!-- 确认支付 -->
 			<template v-if="stepIndex===2">
+				<div class="">
+					<img :src="qrcode" />
+				</div>
 				<footer class="controls">
 					<pk-button class="next-step pure-button-primary" @click.native="stepIndex-=1">上一步</pk-button>
 					<pk-button class="next-step pure-button-primary" @click.native="">已完成支付？</pk-button>

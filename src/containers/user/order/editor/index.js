@@ -16,7 +16,8 @@ export default {
 			isCreatingPayURL: false,
 			stepIndex: 0,
 			plans: undefined, // 套餐列表
-			order: {}
+			order: {},
+			qrcode: null
 		};
 	},
 
@@ -116,7 +117,9 @@ export default {
 		jumpToPay() {
 			this.isCreatingPayURL = true;
 			return Resources.order.payment.save({ No: this.order.No }, {}).then(data => {
-				window.open(data.result);
+				this.qrcode = `/api/qrcode?context=${window.encodeURIComponent(data.result)}`;
+				console.log(this.qrcode);
+				// window.open(data.result);
 			}).catch(error => {
 				this.isCreatingPayURL = false;
 				throw error;
