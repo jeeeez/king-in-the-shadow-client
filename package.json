@@ -7,7 +7,8 @@
 	"scripts": {
 		"start": "node build/dev-server.js",
 		"distTest": "node build/prod-server.js",
-		"build": "rm -rf dist && node build/build.js && cd dist/ && git add -A && git commit -m 'rebuild' && git push",
+		"build": "node build/build.js",
+		"publish": "npm run build & bash ./publish.sh",
 		"unit": "karma start test/unit/karma.conf.js --single-run",
 		"e2e": "node test/e2e/runner.js",
 		"test": "npm run unit && npm run e2e",
