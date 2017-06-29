@@ -18,10 +18,17 @@ export default {
 			e.preventDefault();
 
 			// 数据验证
-			if (Validation.empty(this.email)) return this.errorMessage = '邮箱不能为空！';
-			if (!Validation.email(this.email)) return this.errorMessage = '邮箱格式不正确！';
-			if (Validation.empty(this.password)) return this.errorMessage = '密码不能为空！';
-			if (this.password.length < 6) return this.errorMessage = '密码长度不能小于六位！';
+			if (Validation.empty(this.email))
+				return this.errorMessage = '邮箱不能为空！';
+
+			if (!Validation.email(this.email))
+				return this.errorMessage = '邮箱格式不正确！';
+
+			if (Validation.empty(this.password))
+				return this.errorMessage = '密码不能为空！';
+
+			if (this.password.length < 6)
+				return this.errorMessage = '密码长度不能小于六位！';
 
 			this.errorMessage = '';
 			this.isLogin = true;
@@ -31,7 +38,7 @@ export default {
 				StoreService.set(G.TOKEN_KEY, G.account.token);
 
 				// 页面跳转
-				router.push({ name: G.account.role === 'admin' ? 'admin.profile' : 'user.profile' });
+				router.push({ name: G.account.role === G.ROLES.SUPERADMIN ? 'admin.users' : 'user.profile' });
 			}).catch(error => {
 				Dialog.alert(error.message);
 				this.isLogin = false;

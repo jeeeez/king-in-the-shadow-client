@@ -1,3 +1,5 @@
+import { ROLES } from './role';
+
 export default {
 	website: {
 		title: '非匠',
@@ -18,5 +20,9 @@ export default {
 	// 管理员菜单显示标识
 	showAdminMenu: false,
 	defaultAvatar: require('assets/images/logo/logo-white.png'),
-	TOKEN_KEY: 'KING-TOKEN'
+
+	// 设置在接口请求头headers中验证权限的key值
+	TOKEN_KEY: 'KING-TOKEN',
+
+	ROLES
 };
