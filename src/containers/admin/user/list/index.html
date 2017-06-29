@@ -9,7 +9,10 @@
 
 		<div class="panel-item panel-statistic pure-g">
 			<div class="pure-u-1-2">总用户数：{{users.length}}</div>
-			<div class="pure-u-1-2">今日新增：{{newAmount}}</div>
+			<div class="pure-u-1-2">
+				今日新增：
+				<span v-bind:title="'已验证人数：' + increasedValidatedUsers.length">{{increasedUsers.length}}</span>
+			</div>
 		</div>
 
 		<div class="panel-item panel-node-list">

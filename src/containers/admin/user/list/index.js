@@ -34,7 +34,7 @@ export default {
 	methods: {
 		init() {
 			Resources.users.query().then(data => {
-				this.users = data.result;
+				this.users = data.result.reverse();
 			}).catch(error => {
 				Dialog.alert(error.message);
 			}).finally(() => {
@@ -44,10 +44,17 @@ export default {
 	},
 
 	computed: {
-		newAmount() {
+		// 当日新增的用户
+		increasedUsers() {
 			return this.users.filter(user => {
 				return user.createDate > new Date(new Date().toLocaleDateString()).getTime();
-			}).length;
+			});
+		},
+		// 当日新增且已验证邮箱的用户
+		increasedValidatedUsers() {
+			return this.users.filter(user => {
+				return user.validated && user.createDate > new Date(new Date().toLocaleDateString()).getTime();
+			});
 		}
 	}
 };
