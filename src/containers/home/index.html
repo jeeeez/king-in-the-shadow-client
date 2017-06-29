@@ -10,7 +10,7 @@
 				<router-link to="login" class="btn btn-login animated bounceInRight">登 录</router-link>
 			</div>
 			<div class="controls" v-if="G.account.email">
-				<router-link to="user/profile" class="btn btn-dashboard">
+				<router-link :to="targetURL" class="btn btn-dashboard">
 					{{G.account.email}}
 					<span class="fa fa-arrow-circle-right"></span>
 				</router-link>

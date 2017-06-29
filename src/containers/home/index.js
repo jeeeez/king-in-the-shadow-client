@@ -16,12 +16,20 @@ import G from 'constants';
 export default {
 	template,
 	data() {
-		// const account = G.account || {};
 		return { G, headMenuClassName: '' };
 	},
 	created() {
 		document.addEventListener('scroll', e => {
 			this.headMenuClassName = document.body.scrollTop > 200 ? 'wheel' : '';
 		});
+	},
+
+	computed: {
+		// 登录状态下跳转的目标页面
+		targetURL() {
+			return {
+				[G.ROLES.SUPERADMIN]: 'admin/users'
+			}[G.account.role] || 'user/profile';
+		}
 	}
 };
