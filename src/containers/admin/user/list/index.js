@@ -34,7 +34,9 @@ export default {
 	methods: {
 		init() {
 			Resources.users.query().then(data => {
-				this.users = data.result.reverse();
+				this.users = data.result.sort((user1, user2) => {
+					return user2.createDate - user1.createDate;
+				});
 			}).catch(error => {
 				Dialog.alert(error.message);
 			}).finally(() => {
