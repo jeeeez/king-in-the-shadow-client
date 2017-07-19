@@ -1,6 +1,6 @@
 /**
  * 验证器
- * @authors Picker Lee (https://github.com/pickerlee)
+ * @authors Picker Lee (https://github.com/jeezlee)
  * @email   450994392@qq.com
  * @date    2016-10-09 09:44:36
  */

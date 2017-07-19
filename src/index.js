@@ -1,6 +1,6 @@
 /**
  * 应用入口文件
- * @authors Picker Lee (https://github.com/pickerlee)
+ * @authors Picker Lee (https://github.com/jeezlee)
  * @email   450994392@qq.com
  * @date    2016-09-19 11:21:54
  */

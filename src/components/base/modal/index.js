@@ -1,6 +1,6 @@
 /**
  * 弹出层 Modal
- * @authors Picker Lee (https://github.com/pickerlee)
+ * @authors Picker Lee (https://github.com/jeezlee)
  * @email   450994392@qq.com
  * @date    2016-11-14 22:09:45
  */

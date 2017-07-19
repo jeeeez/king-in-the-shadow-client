@@ -1,6 +1,6 @@
 /**
  * 主页面
- * @authors Picker Lee (https://github.com/pickerlee)
+ * @authors Picker Lee (https://github.com/jeezlee)
  * @email   450994392@qq.com
  * @date    2016-09-18 23:26:01
  */

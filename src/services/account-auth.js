@@ -1,6 +1,6 @@
 /**
  * 用户登录验证
- * @authors Picker Lee (https://github.com/pickerlee)
+ * @authors Picker Lee (https://github.com/jeezlee)
  * @email   450994392@qq.com
  * @date    2016-09-18 22:14:18
  */
