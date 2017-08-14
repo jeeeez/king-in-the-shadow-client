@@ -1,6 +1,6 @@
-# vue-demo
+# KING-IN-THE-SHADOW
 
-> A Vue.js project
+> A VPN management project
 
 ## Build Setup
 
@@ -25,4 +25,4 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# vue-demo
+

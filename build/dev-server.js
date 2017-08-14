@@ -56,8 +56,6 @@ app.use(staticPath, express.static('./static'))
 app.use(express.static(path.resolve(__dirname, '../')))
 app.use(express.static(path.resolve(__dirname, './node_modules')))
 
-console.log(port);
-
 module.exports = app.listen(port, function(err) {
 	if (err) {
 		console.log(err.message)
