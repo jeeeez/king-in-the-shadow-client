@@ -51,7 +51,7 @@ const routes = [
 	{ path: '*', redirect: '/' }
 ];
 
-const router = new VueRouter({ routes });
+const router = new VueRouter({ mode: 'history', routes });
 router.beforeEach((to, from, next) => {
 	G.showMainMenu = false;
 	G.showUserMenu = false;
