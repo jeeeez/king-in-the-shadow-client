@@ -1,0 +1,13 @@
+<pk-modal title="再续一条命" class="activate-modal-container">
+  <form class="pure-form pure-form-stacked">
+    <fieldset>
+      <legend>当前账户服务已到期，请及时续命！</legend>
+      <input class="activate-input" type="text" v-model="activateCode" placeholder="请输入激活码" />
+      <span class="pure-form-message">激活码由 12 位数字字母组合</span>
+
+      <div class="form-contrl">
+        <pk-button class="btn-activate button-success" :is-loading="isSaveing" v-on:click.native="save($event)" :disabled="!matchedActivateCode">立即续命</pk-button>
+      </div>
+    </fieldset>
+  </form>
+</pk-modal>

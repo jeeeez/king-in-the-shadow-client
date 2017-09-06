@@ -17,3 +17,5 @@ import 'components/content-header';
 
 import 'components/menu/admin';
 import 'components/menu/user';
+
+import 'components/activate-modal';

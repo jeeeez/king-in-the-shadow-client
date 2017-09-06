@@ -30,7 +30,8 @@ export default {
 
 		return Requests.accountCheck = Resources.account.check.get().then(response => {
 			if (response.result && response.result.id) {
-				G.account = response.result;
+        G.account = response.result;
+        G.account.isAvailable = response.result.expireDate > response.time;
 			}
 			return response.result;
 		}).finally(() => {

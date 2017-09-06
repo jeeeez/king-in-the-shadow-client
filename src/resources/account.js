@@ -14,5 +14,8 @@ export default {
 	// 登出
 	logout: ResourceGenerator('/api/account/logout'),
 
-	update: ResourceGenerator('/api/account/update')
+  update: ResourceGenerator('/api/account/update'),
+
+  // 消费激活码
+  activate: ResourceGenerator('/api/account/activate')
 };

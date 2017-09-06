@@ -34,6 +34,7 @@ export default {
 			this.isLogin = true;
 			Resources.account.login.save({ email: this.email, password: this.password }).then(response => {
 				G.account = response.result;
+        G.account.isAvailable = response.result.expireDate > response.time;
 				this.isLogin = false;
 				StoreService.set(G.TOKEN_KEY, G.account.token);
 

@@ -1,7 +1,10 @@
 <section id="container" class="user-container">
-	<!-- 用户菜单 -->
-	<user-menu></user-menu>
-	<section id="mainContent">
-		<router-view></router-view>		
-	</section>
+  <!-- 用户菜单 -->
+  <user-menu></user-menu>
+  <section id="mainContent">
+    <router-view></router-view>
+  </section>
+
+  <!-- 如果用户当前账户已到期，则提示激活 -->
+  <activate-modal v-if="isOutOfDate"></activate-modal>
 </section>

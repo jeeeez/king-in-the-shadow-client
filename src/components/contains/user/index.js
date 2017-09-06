@@ -9,6 +9,14 @@ import '../index.scss';
 import './index.scss';
 import template from './index.html';
 
+import G from 'constants';
 import 'components/menu/user';
 
-export default { template };
+export default {
+  template,
+  data() {
+    return {
+      isOutOfDate: !G.account.isAvailable
+    };
+  }
+};
