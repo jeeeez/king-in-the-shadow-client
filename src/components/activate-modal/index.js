@@ -23,7 +23,7 @@ Vue.component('activate-modal', {
       Resources.account.activate.save({
         invitationCode: this.activateCode
       }).then(response => {
-        Dialog.alert('成功续命一' + response.result.type, () => {
+        Dialog.alert('激活成功！', () => {
           window.location.reload();
         });
       }).catch(error => {

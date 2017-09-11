@@ -37,7 +37,7 @@ function adminAccountAuth() {
 
 export default {
 	// 普通用户页面验证
-	beforeUserRouteEnter(to, from, next) {
+	beforeUserRouteEnter(to, ofrom, next) {
 			if (accoutAuth()) return next();
 
 			AccountService.get().then(account => {
@@ -50,7 +50,7 @@ export default {
 		},
 
 		// 管理员页面验证
-		beforeAdminRouteEnter(to, from, next) {
+		beforeAdminRouteEnter(to, ofrom, next) {
 			if (adminAccountAuth()) return next();
 
 			AccountService.get().then(account => {

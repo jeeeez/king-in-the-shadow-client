@@ -1,9 +1,19 @@
 @charset "UTF-8";
 .activate-modal-container {
-  .activate-input{
-    width: 100%;
-  }
-  .form-contrl{
-    margin-top: 30px;
-  }
+	.mask {
+		background-color: rgba(0, 0, 0, .8);
+	}
+	.activate-input {
+		width: 100%;
+	}
+	.form-contrl {
+		margin-top: 30px;
+	}
+	.pure-form-message {
+		margin-top: 5px;
+		color: #1cb841;
+	}
+	.btn-activate {
+		width: 100%;
+	}
 }

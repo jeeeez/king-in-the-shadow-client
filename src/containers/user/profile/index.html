@@ -2,7 +2,9 @@
 	<content-header>个人资料</content-header>
 	<section class="panel-list attention">
 		<div class="panel-item">
-			<p class="info"><strong>注意！</strong></p>
+			<p class="info">
+				<strong>注意！</strong>
+			</p>
 			<p class="info">您需要下载相应软件或App才能使用我们的VPN哦！</p>
 			<p class="info">在此，我们已经为各位客官准备好了使用教程：</p>
 			<ol>
@@ -21,23 +23,33 @@
 			</ol>
 		</div>
 
+
+		<div class="controls">
+			<router-link class="btn-link" to="/user/reset-vpn-password">修改VPN密码</router-link>
+			<router-link class="btn-link" to="/user/reset-account-password">修改登录密码</router-link>
+		</div>
+
 		<section class="panel-item dashboard-contain">
-			<div class="controls">
-				<router-link class="btn-link" to="/user/reset-vpn-password">修改VPN密码</router-link>
-				<router-link class="btn-link" to="/user/reset-account-password">修改登录密码</router-link>
-			</div>
 
 			<div class="pure-g">
 				<div class="pure-u-1 pure-u-md-1-2">
-					<span>邮箱：</span><span>{{account.email}}</span>
+					<span>邮箱：</span>
+					<span>{{account.email}}</span>
+				</div>
+				<div class="pure-u-1 pure-u-md-1-2">
+					<span>有效期：</span>
+					<span v-if="account.isAvailable">{{account.expireDate | formatDate('yyyy-MM-dd hh:mm')}}</span>
+					<span v-if="!account.isAvailable" class="out-of-date">{{account.expireDate | formatDate('yyyy-MM-dd hh:mm')}}已过期</span>
 				</div>
 			</div>
 			<div class="pure-g">
 				<div class="pure-u-1 pure-u-md-1-2">
-					<span>shadowsocks端口：</span><span>{{account.port}}</span>
+					<span>shadowsocks端口：</span>
+					<span>{{account.port}}</span>
 				</div>
 				<div class="pure-u-1 pure-u-md-1-2">
-					<span>shadowsocks密码：</span><span>{{account.auth}}</span>
+					<span>shadowsocks密码：</span>
+					<span>{{account.auth}}</span>
 				</div>
 			</div>
 		</section>

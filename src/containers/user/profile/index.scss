@@ -3,47 +3,38 @@
 		li {
 			list-style: inherit;
 			margin-bottom: 6px;
-
 			a {
 				text-decoration: none;
 				color: #745cf9;
-
 				&:hover {
 					color: #5d47d7;
 				}
 			}
 		}
 	}
-
 	.dashboard-contain {
 		min-height: 300px;
 		background-color: #fff;
 		position: relative;
-
 		.pure-g {
 			> div {
 				margin-bottom: 20px;
 			}
 		}
-
-		.controls {
-			position: absolute;
-			right: 15px;
-			top: 9px;
-
-			.btn-link {
-				display: inline-block;
-				padding: 4px 8px;
-				border: 1px solid #ededed;
-				text-decoration: none;
-				color: #529e42;
-				font-size: 12px;
-				border-radius: 2px;
-				cursor: pointer;
-			}
+	}
+	.controls {
+		margin: 15px 0;
+		.btn-link {
+			display: inline-block;
+			padding: 4px 8px;
+			border: 1px solid #ededed;
+			text-decoration: none;
+			color: #529e42;
+			font-size: 12px;
+			border-radius: 2px;
+			cursor: pointer;
 		}
 	}
-
 	.pk-modal-container {
 		.oops {
 			font-size: 12px;
@@ -51,16 +42,13 @@
 			margin: 5px;
 			color: #529e42;
 		}
-
 		.tips {
 			margin-bottom: 10px;
 		}
-
 		.pure-control-group {
 			> label {
 				width: 5em;
 			}
-
 			> input {
 				display: inline-block !important;
 				color: #444;
@@ -68,14 +56,18 @@
 				vertical-align: sub;
 			}
 		}
-
 		&.VPN {
 			.pure-form {
 				margin-top: 20px;
 			}
 		}
 	}
+	.out-of-date {
+		color: #888;
+		text-decoration: line-through;
+	}
 }
+
 @media only screen and (max-width: 520px) {
 	#dashboard {
 		.dashboard-contain {
@@ -83,27 +75,22 @@
 				position: initial;
 				text-align: center;
 				margin-bottom: 10px;
-
 				.btn-link {
 					margin: 5px;
 				}
 			}
 		}
-
 		.pk-modal-container {
 			.pure-control-group {
 				text-align: left;
-
 				> label {
 					margin-bottom: 5px;
 					text-align: left;
 				}
-
 				> input {
 					width: 100%;
 				}
 			}
-
 			.pure-form-aligned {
 				.pure-controls {
 					margin: 1.5em 0 0;
