@@ -1,0 +1,29 @@
+.pk-select{
+  display: inline-block;
+  position: relative;
+
+  .value-input-box{
+    position: relative;
+
+    input.value{
+      padding: 4px 2px;
+    }
+
+    .indicator{
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      color: #888;
+      transition: all 0.5s;
+    }
+  }
+
+  .options-box{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #eee;
+  }
+}

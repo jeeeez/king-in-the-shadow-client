@@ -9,6 +9,7 @@ import 'components/base/modal';
 import 'components/base/step';
 import 'components/base/step/step-item';
 import 'components/base/tips';
+import 'components/base/select';
 
 import 'components/contains/admin';
 import 'components/contains/user';
