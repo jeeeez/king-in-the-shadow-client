@@ -5,17 +5,20 @@
 			<p class="info">每个账号每天可申请{{maxInvitationCodeAmount}}个内测口令，今日剩余{{maxInvitationCodeAmount - codes.length}}个口令名额。</p>
 			<p class="info">仅显示今日申请的口令，但之前申请的仍然有效，如需要请自行保存！</p>
 			<div class="oops">
+        <pk-select v-model="codeType">
+          <pk-option value="YEAR">年</pk-option>
+          <pk-option value="SEASON">季</pk-option>
+          <pk-option value="MONTH">月</pk-option>
+          <pk-option value="WEEK">周</pk-option>
+          <pk-option value="DAY">日</pk-option>
+        </pk-select>
+
 				<!-- 创建按钮 -->
-				<pk-button class="btn-create pure-input-1"
-					:is-loading="isCreating"
-					:disabled="isCreating"
-					v-on:click.native="create"
-					v-if="!isFetching && codes.length < maxInvitationCodeAmount">
+				<pk-button class="btn-create pure-input-1" :is-loading="isCreating" :disabled="isCreating" v-on:click.native="create" v-if="!isFetching && codes.length < maxInvitationCodeAmount">
 					创建口令
 				</pk-button>
 				<!-- 今日邀请码已满 -->
-				<button class="pure-button pure-input-1" disabled
-					v-if="!isFetching && codes.length >= maxInvitationCodeAmount">
+				<button class="pure-button pure-input-1" disabled v-if="!isFetching && codes.length >= maxInvitationCodeAmount">
 					今日口令数量已使用完
 				</button>
 			</div>
