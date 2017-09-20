@@ -12,7 +12,9 @@ export default {
 	 * 3、程序初始化时会做一次用户会话检查，在 src/index.js 中
 	 * 但是设置 account 信息的脚本在 src/services/store/account.js 中
 	 */
-	account: {},
+  account: {},
+  // 是否显示账户激活弹出框
+  showActivateModal: false,
 	// 首页菜单显示标识
 	showMainMenu: false,
 	// 用户菜单显示标识

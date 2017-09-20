@@ -13,10 +13,8 @@ import G from 'constants';
 import 'components/menu/user';
 
 export default {
-  template,
-  data() {
-    return {
-      isOutOfDate: !G.account.isAvailable
-    };
-  }
+	template,
+	data() {
+		return { G };
+	}
 };

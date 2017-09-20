@@ -10,7 +10,7 @@ export default {
 	template,
 	data() {
 		return {
-			account: G.account
+      account: G.account
 		};
 	},
 
