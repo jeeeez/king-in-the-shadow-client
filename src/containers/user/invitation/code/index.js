@@ -20,8 +20,8 @@ export default {
 			codes: [],
 			isFetching: true,
 			isCreating: false,
-      maxInvitationCodeAmount: 10,
-      codeType: 'YEAR'
+			maxInvitationCodeAmount: 10,
+			codeType: 'YEAR'
 		};
 	},
 	mounted() {
@@ -39,7 +39,7 @@ export default {
 			if (this.isCreating) return;
 
 			this.isCreating = true;
-			Resources.invitation.codes.save().then(data => {
+			Resources.invitation.codes.save({ type: this.codeType }).then(data => {
 				this.codes.push(data.result);
 			}).catch(error => {
 				Dialog.alert(error.message);

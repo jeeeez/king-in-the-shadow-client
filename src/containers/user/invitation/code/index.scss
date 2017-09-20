@@ -16,7 +16,12 @@
 	}
 
 	.code-item-heading {
-		line-height: 30px;
+    line-height: 30px;
+
+    .code-type{
+      color: #ff9800;
+      margin-left: 20px;
+    }
 
 		.code-date {
 			float: right;

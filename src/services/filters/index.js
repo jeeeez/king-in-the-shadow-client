@@ -9,7 +9,9 @@ import Vue from 'vue';
 
 import date from './date';
 import number from './number';
+import invitationCodeType from './invitation';
 
 Vue.filter('formatDate', date.format);
 Vue.filter('number', number.number);
 Vue.filter('currency', number.currency);
+Vue.filter('invitationCodeType', invitationCodeType);

@@ -33,7 +33,8 @@
 
 			<section class="panel-code-item" v-for="(code,index) in codes" :node="code">
 				<header class="code-item-heading">
-					<span class="code-index"># {{index+1}}</span>
+          <span class="code-index"># {{index+1}}</span>
+          <span class="code-type">{{code.type | invitationCodeType}}</span>
 					<span class="code-date" title="口令创建时间">{{code.createDate | formatDate('hh:mm')}}</span>
 				</header>
 				<section class="code-item-body">
@@ -52,7 +53,7 @@
 							</div>
 							<div class="pure-g" v-if="code.inviteeId">
 								<div class="pure-u-1 pure-u-md-1-2">
-									<span class="title">被邀请人：</span>
+									<span class="title">使用人：</span>
 									<span>{{code.inviteeId}}</span>
 								</div>
 								<div class="pure-u-1 pure-u-md-1-2">
