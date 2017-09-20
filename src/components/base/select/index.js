@@ -16,24 +16,91 @@ Vue.component('pk-select', {
 			type: String,
 			default: '请选择一个选项'
 		},
-		change: Function
+		change: Function,
+		width: {
+			type: String,
+			default: '100px'
+		}
 	},
 
 	data() {
 		return {
-			opened: false
+			opened: false,
+			text: '',
+			optsBoxStyle: {
+				visibility: 'hidden',
+				// height: 0
+			}
 		};
 	},
 
-	methods: {
-		select(value) {
-			if (value === this.value) return;
+	mounted() {
+		this.getText(this.value);
+		this.getOptsBoxHeight();
+		this.optsBoxStyle.height = '0px';
+		delete this.optsBoxStyle.visibility;
+	},
 
-			this.$emit('input', value);
+	beforeDestroy() {
+		clearTimeout(this.timer);
+	},
+
+	methods: {
+		toggle() {
+			this.opened = !this.opened;
+
+			this.opened ? this.open() : this.close();
+		},
+
+		open() {
+			clearTimeout(this.timer);
+
+			this.opened = true;
+			this.optsBoxStyle.height = this.optsBoxHeight + 'px';
+			this.optsBoxStyle.border = '1px solid #eee';
+		},
+
+		close() {
+			clearTimeout(this.timer);
+
+			this.opened = false;
+			this.optsBoxStyle.height = '0px';
+
+			this.timer = setTimeout(() => {
+				this.optsBoxStyle = {
+					height: '0px',
+					border: 'none'
+				};
+			}, 300);
+		},
+
+		select(value) {
+			this.close();
+			if (value === this.value) return;
 
 			if (this.change) {
 				this.change(value);
 			}
+
+			this.$emit('input', value);
+			this.getText(value);
+		},
+
+		getText(value) {
+			const activeOpt = this.$children.find(option => option.value === value);
+
+			if (!activeOpt) return '';
+
+			const slot = activeOpt.$slots.default[0];
+			const text = slot ? slot.text : '';
+
+			this.text = text;
+		},
+
+		getOptsBoxHeight() {
+			const optsBox = this.$refs.optionsBox;
+			// 2px border
+			this.optsBoxHeight = optsBox.offsetHeight + 2;
 		}
 	}
 });
@@ -41,7 +108,7 @@ Vue.component('pk-select', {
 
 Vue.component('pk-option', {
 	template: `
-    <div class="pk-option" v-bind:class="" v-on:click="select()">
+    <div class="pk-option" v-bind:class="{active:isActive}" v-on:click="select()">
       <slot></slot>
     </div>
   `,
@@ -62,7 +129,6 @@ Vue.component('pk-option', {
 
 	methods: {
 		select() {
-			console.log(this.value);
 			this.$parent.select(this.value);
 		}
 	}

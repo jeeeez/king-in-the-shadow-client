@@ -1,9 +1,11 @@
-<div class="pk-select" :class="{disabled:disabled,opened:opened}">
-  <div class="value-input-box">
-      <input type="text" class="value" v-bind:value="value" readonly :placeholder="placeholder" />
-      <i class="indicator fa fa-sort-down"></i>
+<div class="pk-select" :class="{disabled:disabled,opened:opened}" :style="{width:width}">
+  <div class="value-input-box" v-on:click="toggle()">
+      <input type="text" class="value" v-bind:value="text" readonly :placeholder="placeholder" />
+      <div class="indicator">
+        <i class="fa fa-sort-down"></i>
+      </div>
   </div>
-  <div class="options-box">
+  <div ref="optionsBox" class="options-box" :style="optsBoxStyle">
       <slot></slot>
   </div>
 </div>
