@@ -1,0 +1,21 @@
+<section class="container forget-container">
+	<section class="forget-box">
+		<header class="box-head">忘记密码</header>
+		<form class="pure-form" autocomplete="off">
+			<tips v-if="errorMessage" type="error" v-bind:message="errorMessage"></tips>
+			<fieldset class="pure-group">
+        <div class="email-holder">
+            <input type="text" class="pure-input-1" placeholder="邮箱" v-model="email" />
+            <pk-button class="btn-auth" :is-loading="isFetchingAuthCode" v-on:click.native="getAuthCode">获取验证码</pk-button>
+        </div>
+				<input type="text" class="pure-input-1" placeholder="邮箱验证码" v-model="retrieveCode" />
+				<input type="password" class="pure-input-1" placeholder="新密码" v-model="password" />
+			</fieldset>
+			<pk-button class="btn-submit pure-input-1" :is-loading="isSaving" v-on:click.native="save">重置密码</pk-button>
+			<div class="oops">
+				<router-link to="/login">返回登录</router-link>
+				<router-link to="/register" class="right">立即注册</router-link>
+			</div>
+		</form>
+	</section>
+</section>

@@ -7,6 +7,7 @@ import accoutAuth from 'services/account-auth';
 import Home from 'containers/home';
 import Login from 'containers/login';
 import Register from 'containers/register';
+import ForgetPassword from 'containers/forget';
 
 import UserContainer from 'components/contains/user';
 import User from 'containers/user';
@@ -26,6 +27,7 @@ const routes = [
 	{ name: 'declaration', path: '/declaration', component: Vue.extend(Declaration) },
 	{ name: 'register', path: '/register', component: Vue.extend(Register) },
 	{ name: 'login', path: '/login', component: Vue.extend(Login) },
+	{ name: 'forget', path: '/forget', component: Vue.extend(ForgetPassword) },
 	{
 		path: '/user',
 		component: Vue.extend(UserContainer),

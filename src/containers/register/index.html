@@ -1,7 +1,7 @@
 <section class="container register-container">
 	<section class="register-box">
 		<header class="box-head">用户注册</header>
-		<form class="pure-form">
+		<form class="pure-form" autocomplete="off">
 			<tips v-if="errorMessage" type="error" v-bind:message="errorMessage"></tips>
 			<fieldset class="pure-group">
 				<input type="email" class="pure-input-1" required placeholder="邮箱" v-model="email" />

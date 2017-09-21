@@ -2,14 +2,16 @@
 @import "../../assets/styles/variables";
 
 .login-container,
-.register-container {
+.register-container,
+.forget-container {
 	@include linearGradient(#fcee6c, #fff);
 	height: 99vh;
 	border-top: 1px solid #fcee6c;
 	position: relative;
 
 	.login-box,
-	.register-box {
+  .register-box,
+  .forget-box {
 		width: 320px;
 		margin: 0 auto;
 		border-radius: 4px;

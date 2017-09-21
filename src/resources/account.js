@@ -17,5 +17,8 @@ export default {
   update: ResourceGenerator('/api/account/update'),
 
   // 消费激活码
-  activate: ResourceGenerator('/api/account/activate')
+  activate: ResourceGenerator('/api/account/activate'),
+
+  forgetPassword: ResourceGenerator('/api/account/password/forget'),
+  resetPassword: ResourceGenerator('/api/account/password/reset')
 };
