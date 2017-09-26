@@ -32,7 +32,7 @@ export default {
 
 			this.errorMessage = '';
 			this.isLogin = true;
-			Resources.account.login.save({ email: this.email, password: this.password }).then(response => {
+			Resources.account.login.save({ email: this.email.toLowerCase(), password: this.password }).then(response => {
 				G.account = response.result;
         G.account.isAvailable = response.result.expireDate > response.time;
 				this.isLogin = false;

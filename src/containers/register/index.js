@@ -46,7 +46,7 @@ export default {
 			this.errorMessage = '';
 			this.isRegister = true;
 			Resources.account.register.save({
-				email: this.email,
+				email: this.email.toLowerCase(),
 				password: this.password // ,
 				// invitationCode: this.invitationCode
 			}).then(response => {
