@@ -20,7 +20,7 @@ export default {
 			codes: [],
 			isFetching: true,
 			isCreating: false,
-			maxInvitationCodeAmount: 10,
+			maxInvitationCodeAmount: 100,
 			codeType: 'YEAR'
 		};
 	},

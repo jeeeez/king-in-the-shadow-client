@@ -18,31 +18,45 @@
 	}
 
 	.panel-user-item {
-		border-bottom: 1px solid #eee;
-		padding: 10px 0;
-		margin-bottom: 10px;
+		// border-bottom: 1px solid #eee;
+		padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    background-color: #ffdbdb;
 
 		&:last-child {
 			border-bottom: none;
-		}
+    }
+
+    &.available {
+      background-color: #e7ffe7;
+    }
 
 		.user-item-heading {
 			margin-bottom: 20px;
-			position: relative;
+      position: relative;
 
-			.validate-info {
-				position: absolute;
-				right: 15px;
-				font-size: 13px;
+      .btn-activate{
+        position: absolute;
+        top: 0;
+				right: 0;
+        font-size: 12px;
+        padding: 0.2em 0.5em;
+      }
 
-				&.success {
-					color: #07b507;
-				}
+			// .validate-info {
+			// 	position: absolute;
+			// 	right: 15px;
+			// 	font-size: 13px;
 
-				&.error {
-					color: #f36161;
-				}
-			}
+			// 	&.success {
+			// 		color: #07b507;
+			// 	}
+
+			// 	&.error {
+			// 		color: #f36161;
+			// 	}
+			// }
 
 			.user-name {
 				font-size: 16px;

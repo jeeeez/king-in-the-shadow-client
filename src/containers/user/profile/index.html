@@ -37,7 +37,7 @@
 					<span>{{account.email}}</span>
 				</div>
 				<div class="pure-u-1 pure-u-md-1-2">
-					<span>有效期：</span>
+					<span>有效期至：</span>
 					<span v-if="account.isAvailable">{{account.expireDate | formatDate('yyyy-MM-dd hh:mm')}}</span>
 					<span v-if="!account.isAvailable" class="out-of-date">{{account.expireDate | formatDate('yyyy-MM-dd hh:mm')}}已过期</span>
 				</div>

@@ -1,7 +1,7 @@
-<pk-modal title="账户激活" class="activate-modal-container">
+<pk-modal title="使用激活码" class="activate-modal-container" :clickMaskToClose="true" :destroy="destroy">
   <form class="pure-form pure-form-stacked">
     <fieldset>
-      <legend>当前账户需要激活才能正常使用！</legend>
+      <!-- <legend>当前账户需要激活才能正常使用！</legend> -->
       <input class="activate-input" type="text" v-model="activateCode" placeholder="请输入激活码" />
       <span class="pure-form-message">激活码由 12 位数字字母组合</span>
 

@@ -21,9 +21,9 @@ Vue.component('user-menu', {
 	},
 	methods: {
 		showActivateModal() {
-      this.G.showActivateModal = true;
-      console.log(this.G);
+			this.G.showActivateModal = true;
 		},
+
 		logout() {
 			Dialog.confirm('确定退出当前账号？', () => {
 				AccountService.logout().catch(error => Dialog.alert(error.message));

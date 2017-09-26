@@ -1,6 +1,6 @@
 <div class="pk-select" :class="{disabled:disabled,opened:opened}" :style="{width:width}">
   <div class="value-input-box" v-on:click="toggle()">
-      <input type="text" class="value" v-bind:value="text" readonly :placeholder="placeholder" />
+      <input type="text" class="value" v-bind:value="text" disabled :placeholder="placeholder" />
       <div class="indicator">
         <i class="fa fa-sort-down"></i>
       </div>

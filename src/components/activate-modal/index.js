@@ -6,37 +6,40 @@ import Resources from 'resources';
 import Dialog from 'services/dialog';
 
 Vue.component('activate-modal', {
-  template,
-  data() {
-    return {
-      activateCode: '',
-      isSaveing: false
-    };
-  },
+	props: {
+		destroy: Function
+	},
+	template,
+	data() {
+		return {
+			activateCode: '',
+			isSaveing: false
+		};
+	},
 
-  methods: {
-    save(event) {
-      event.preventDefault();
+	methods: {
+		save(event) {
+			event.preventDefault();
 
-      this.isSaveing = true;
+			this.isSaveing = true;
 
-      Resources.account.activate.save({
-        invitationCode: this.activateCode
-      }).then(response => {
-        Dialog.alert('激活成功！', () => {
-          window.location.reload();
-        });
-      }).catch(error => {
-        Dialog.alert(error.message);
-      }).finally(() => {
-        this.isSaveing = false;
-      });
-    }
-  },
+			Resources.account.activate.save({
+				invitationCode: this.activateCode
+			}).then(response => {
+				Dialog.alert('激活成功！', () => {
+					window.location.reload();
+				});
+			}).catch(error => {
+				Dialog.alert(error.message);
+			}).finally(() => {
+				this.isSaveing = false;
+			});
+		}
+	},
 
-  computed: {
-    matchedActivateCode() {
-      return /^[A-Za-z0-9]{12}$/.test(this.activateCode);
-    }
-  }
+	computed: {
+		matchedActivateCode() {
+			return /^[A-Za-z0-9]{12}$/.test(this.activateCode);
+		}
+	}
 });

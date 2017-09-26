@@ -1,7 +1,12 @@
 <section class="pk-modal-container" v-bind:class="className">
 	<section class="mask" v-on:click="clickMask"></section>
 	<section class="pk-modal">
-		<header class="pk-modal-head">{{title}}</header>
+		<header class="pk-modal-head">
+			<span>{{title}}</span>
+			<span class="btn-close" v-on:click="close()">
+					<i class="fa fa-close"></i>
+			</span>
+		</header>
 		<section class="pk-modal-body">
 			<div class="inner-mask" v-if="innerMask"></div>
 			<slot></slot>

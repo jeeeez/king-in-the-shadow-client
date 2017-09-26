@@ -23,8 +23,8 @@ export default {
 			G,
 			users: [],
 			isFetching: true,
-			isCreating: false,
-			showNodeEditor: false
+			currentDate: 0,
+			showActivateModal: false
 		};
 	},
 	mounted() {
@@ -33,15 +33,27 @@ export default {
 
 	methods: {
 		init() {
+			this.fetchUserList();
+		},
+
+		fetchUserList() {
+			this.isFetching = true;
 			Resources.users.query().then(data => {
 				this.users = data.result.sort((user1, user2) => {
 					return user2.createDate - user1.createDate;
 				});
+				this.currentDate = data.time;
 			}).catch(error => {
 				Dialog.alert(error.message);
 			}).finally(() => {
 				this.isFetching = false;
 			});
+		},
+
+		// 为某个用户延长时间
+		activate(user) {
+			console.log(user);
+
 		}
 	},
 

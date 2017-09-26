@@ -14,25 +14,28 @@ Vue.component('pk-modal', {
 	template,
 	props: {
 		// config: { type: Object, required: true },
-		// destroy: { type: Function, required: true },
+		destroy: { type: Function, required: true },
 		title: { type: String },
 		innerMask: { type: Boolean },
-		beforeClose: { type: Function } // must be a promise function
+		beforeClose: { type: Function }, // must be a promise function
+		clickMaskToClose: Boolean
 	},
 	data() {
-		return { className: '' };
+		return { className: '', visible: true };
 	},
 	methods: {
 		close() {
-			const beforeClose = this.beforeClose || Promise.resolve;
-
-			return beforeClose().then(result => {
+			const beforeClose = this.beforeClose || Promise.resolve();
+      // this.visible = false;
+			return beforeClose.then(result => {
 				this.destroy();
 				return result;
 			});
 		},
+
 		clickMask(event) {
 			event.preventDefault();
+
 			if (this.clickMaskToClose) {
 				this.close();
 			}
