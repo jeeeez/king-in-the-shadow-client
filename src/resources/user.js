@@ -7,6 +7,7 @@
 
 import ResourceGenerator from 'resources/generator';
 
-const users = ResourceGenerator('/api/users');
+const list = ResourceGenerator('/api/users');
+const activate = ResourceGenerator('/api/users/{userID}/activate');
 
-export { users };
+export default { list, activate };

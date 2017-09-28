@@ -36,10 +36,14 @@
 			margin-bottom: 20px;
       position: relative;
 
-      .btn-activate{
+      .oops{
         position: absolute;
         top: 0;
 				right: 0;
+      }
+
+      .btn-activate{
+
         font-size: 12px;
         padding: 0.2em 0.5em;
       }

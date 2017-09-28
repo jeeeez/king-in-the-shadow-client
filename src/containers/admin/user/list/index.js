@@ -38,9 +38,12 @@ export default {
 
 		fetchUserList() {
 			this.isFetching = true;
-			Resources.users.query().then(data => {
+			Resources.users.list.query().then(data => {
 				this.users = data.result.sort((user1, user2) => {
 					return user2.createDate - user1.createDate;
+				}).map(user => {
+					user.activateDays = '366';
+					return user;
 				});
 				this.currentDate = data.time;
 			}).catch(error => {
@@ -52,8 +55,22 @@ export default {
 
 		// 为某个用户延长时间
 		activate(user) {
-			console.log(user);
+			if (this.isActivating) return;
 
+			Dialog.confirm(`确定为用户 ${user.email} 延长 ${user.activateDays} 天服务？`, function() {
+
+				this.isActivating = true;
+				return Resources.users.activate.save({ userID: user.id }, { days: user.activateDays })
+					.then(response => {
+						user.expireDate = response.result.expireDate;
+						console.log(new Date(user.expireDate));
+
+					}).catch(error => {
+						Dialog.alert(error.message);
+					}).finally(() => {
+						this.isActivating = false;
+					});
+			});
 		}
 	},
 
